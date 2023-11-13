@@ -13,7 +13,7 @@ div.right {
 
 main.content {
   float: left;
-  width: 80%; /* Adjust width as needed to leave space on the right if necessary */
+  width: 70%; /* Adjust width as needed to leave space on the right if necessary */
   margin-left: 3%
   /* Additional styles if needed */
 }
@@ -100,3 +100,37 @@ main.content {
   border-radius: 50%; /* 圆形的控制器 */
 }
 
+/*player style*/
+.player {
+  background: Black;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.player-album-art {
+  background-image: url('path_to_album_art.jpg');
+  background-size: cover;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.player-song-info {
+  padding: 10px 0;
+}
+
+.player-song-info .title {
+  margin: 0;
+  font-weight: bold;
+}
+
+.player-song-info .artist {
+  margin: 0;
+  color: #555;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
