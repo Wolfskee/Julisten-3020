@@ -198,7 +198,7 @@ audio {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
-  color:#000000;
+  color:#ffffff;
   border: none;
   outline: none;
   cursor: pointer;
@@ -210,7 +210,7 @@ audio {
   transform: translate(-50%,-50%);
   width: 380px;
   padding: 20px 30px;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(0, 0, 0, 0.3);
   box-shadow: 2px 2px 5px 5px rgb(0,0,0,0.15);
   border-radius: 10px;
 }
@@ -242,7 +242,7 @@ audio {
 
 .popup .form .form-element label{
   font-size: 14px;
-  color: #000;
+  color: #ffffff;
 }
 
 .popup .form .form-element input[type="email"], .popup .form .form-element input[type="password"]{
@@ -302,3 +302,19 @@ audio {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for a 'lifted' effect */
   transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
+
+#header{
+  position: relative;
+}
+
+#logo {
+  position: absolute; /* Absolute positioning within the header */
+  left: 0; /* Start from the left edge of the header */
+  top: 0; /* Start from the top edge of the header */
+  transform: translate(-50%, -50%); /* Adjust the position relative to its current position */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 200px; /* Adjust the width as needed */
+}
+
