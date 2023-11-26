@@ -8,7 +8,7 @@ var information = {
 let homePageHTML = null;
 
 
-function moreInfo(element){
+function moreInfo_SoD(element){
 	var singer = element.parentElement.querySelectorAll('div')[0].outerHTML;
 	var length = element.parentElement.querySelectorAll('div')[1].outerHTML;
 	var coverPic = element.parentElement.parentElement.querySelector('img').outerHTML;
@@ -51,10 +51,59 @@ function moreInfo(element){
 	`;
 }
 
+function moreInfo(element){
+	var musicName = element.parentElement.querySelectorAll('span')[0].outerHTML;
+  var singer = element.parentElement.querySelectorAll('span')[1].outerHTML;
+	//var length = element.parentElement.querySelectorAll('div')[1].outerHTML;
+  var length = "NOT READY";
+	var coverPic = element.parentElement.parentElement.querySelector('img').outerHTML;
+  var mainPage = document.getElementById("main-container");
+	var info
+
+
+
+
+  homePageHTML = mainPage.innerHTML;
+
+  console.log(homePageHTML);
+
+	info = searchForKey(information, musicName);
+
+  if(info == undefined){
+    info = "This is a general description of "+musicName +"is a good music"
+  }
+
+	console.log(info);
+
+	mainPage.innerHTML = `
+    <div class="content">
+			<button class="btn btn-secondary search-button" onclick="returnHome()"><h2>&larr;</h2></button>
+			<section class="song-of-the-day mb-5">
+				<div class="row">
+					`+coverPic+`
+					<div class="col">
+						<h5>`+musicName+`</h5>
+						`+singer+`
+						<div>`+length+`</div>
+					</div>
+				</div>
+			</section>
+			<hr style="filter: alpha(opacity=100, finishopacity = 0, style=3)" width="100%" color = #fff size = 3></hr>
+			<div class="container-fluid" length: 500px>
+				<h4>Information</h4>
+					<div class="col">
+						`+info+`
+					</div>
+			</div>
+		</div>
+	`;
+}
+
 function returnHome(){
   var mainPage = document.getElementById("main-container");
 
   // Set the innerHTML of the main page back to the original home page HTML
+  console.log(homePageHTML);
   if (homePageHTML) {
     mainPage.innerHTML = homePageHTML;
   }
