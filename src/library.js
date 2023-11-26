@@ -1,9 +1,12 @@
 // Add event listener to the "Songs" link
-const songsLink = document.querySelector('.nav-link.text-white'); // Change this selector to match your specific "Songs" link
-songsLink.addEventListener('click', function (event) {
+const songsLink = document.querySelector('#songs-link');
+const podcastsLink = document.querySelector('#podcasts-link');
+const radioLink = document.querySelector('#radio-link');
+
+[songsLink, podcastsLink, radioLink].forEach((link, i) => link.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent the default behavior of the link
-    displayMediaItem(songsDB); // Call the function to display songs
-});
+    displayMediaItem([songsDB, podcastsDB, radioDB][i]); // Call the function to display songs
+}));
 
 const songName = ["Moonlight", "Echoes", "Serenade", "Whisper", "Enchantment", "Velvet", "Surrender", "Stardust", "Crystal", "Echo", "Cascade", "Horizon", "Reflection", "Solitude", "Eternity", "Oasis", "Aurora", "Reverie", "Lullaby", "Sanctuary", "Mirage", "Harmony", "Radiance", "Misty", "Ember", "Enigma", "Dusk", "Ethereal"];
 const radioName = ["Rhythmic Reflections", "Sonic Odyssey", "Frequencies Unveiled", "Melodic Journeys", "Radiant Resonance", "Harmonic Horizons", "Audio Escapade", "Vibrant Voyages", "Celestial Cadence", "Echoed Emotions", "Serene Soundscapes", "Whispered Waves", "Enchanted Echoes", "Radiant Rhythms", "Lyrical Luminescence", "Sonorous Stories", "Ethereal Episodes", "Resonant Reverie", "Mellow Moments", "Tranquil Tunes", "Dreamy Dispatch", "Ambient Adventures", "Echoic Excursions", "Sonic Serenity", "Vibrato Vignettes"];
@@ -12,8 +15,8 @@ const musicGenres = ["Rock", "Jazz", "Pop", "Hip Hop/Rap", "Classical", "Blues",
 const podcastTopics = ["True Crime Mysteries", "Personal Growth Journeys", "Science and Technology Insights", "Comedy and Laughter Therapy", "History Unveiled", "Business and Entrepreneurship Chronicles", "Culinary Adventures and Food Stories", "Health and Wellness Wisdom", "Literary Escapades and Book Reviews", "Travel Tales and Destination Discoveries", "Pop Culture Commentary", "Environmental Explorations", "Music Moods and Melodies", "Parenting Perspectives", "Sports Stories and Insights", "Mindfulness and Meditation Moments", "Political Ponderings", "Educational Excursions", "Art and Creativity Spotlights", "Interviews with Inspiring Individuals", "Film and TV Show Reviews", "Spirituality and Metaphysical Musings", "Gaming Galore", "Fashion and Style Trends", "Social Media Stories and Trends", "Relationship Realities", "Educational Entertainment", "Motivational Moments", "Science Fiction and Fantasy Fables", "Documentary Deep Dives"]
 
 const songsDB = generateRandomItemsDatabase(musicGenres, songName, 1, 3);
+const podcastsDB = generateRandomItemsDatabase(podcastTopics, radioName, 1, 1);
 const radioDB = generateRandomItemsDatabase(radioGenres, radioName, 1, 1);
-const podcastDB = generateRandomItemsDatabase(podcastTopics, radioName, 1, 1);
 
 function displayMediaItem(db) {
     const mainContainer = document.getElementById('main-container');
@@ -27,7 +30,7 @@ function displayMediaItem(db) {
         genreClone.querySelector('#genre-name').innerText = genre;
 
         const songList = document.createElement('div');
-        songList.classList.add('song-list');
+        songList.classList.add('media-grid');
 
         songs.forEach(song => {
             const clone = document.importNode(itemTemplate.content, true);

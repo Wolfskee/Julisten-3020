@@ -42,12 +42,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 30px 20px 12px 12px;
+    margin: 20px 20px 12px 12px;
 }
 
-.song-list {
+.media-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     margin-left: 20px;
+    margin-bottom: 50px;
 }
