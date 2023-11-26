@@ -1,9 +1,9 @@
 gsap.from("#logo", {
-    duration: 0.75,    
-    scale: 0.5,     
-    ease: "bounce.out",
-    opacity: 0,       
-    y: -100          
+    duration: 1.5,
+    scale: 0.8, 
+    ease: "elastic.out(1, 0.3)", 
+    opacity: 0, 
+    y: -50, 
 });
 
 gsap.from("header", {
@@ -15,5 +15,16 @@ gsap.from("header", {
     rotationX: 10,    
     transformOrigin: "center bottom" 
 });
+
+gsap.to("#droppable", {
+    duration: 4,
+    y: "-20px",
+    rotationX: 10,
+    rotationY: 5,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut"
+});
+
 
 
