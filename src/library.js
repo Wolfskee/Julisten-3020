@@ -2,19 +2,25 @@
 const songsLink = document.querySelector('.nav-link.text-white'); // Change this selector to match your specific "Songs" link
 songsLink.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent the default behavior of the link
-    displaySongs(); // Call the function to display songs
+    displayMediaItem(songsDB); // Call the function to display songs
 });
 
-function displaySongs() {
+const songName = ["Moonlight", "Echoes", "Serenade", "Whisper", "Enchantment", "Velvet", "Surrender", "Stardust", "Crystal", "Echo", "Cascade", "Horizon", "Reflection", "Solitude", "Eternity", "Oasis", "Aurora", "Reverie", "Lullaby", "Sanctuary", "Mirage", "Harmony", "Radiance", "Misty", "Ember", "Enigma", "Dusk", "Ethereal"];
+const radioName = ["Rhythmic Reflections", "Sonic Odyssey", "Frequencies Unveiled", "Melodic Journeys", "Radiant Resonance", "Harmonic Horizons", "Audio Escapade", "Vibrant Voyages", "Celestial Cadence", "Echoed Emotions", "Serene Soundscapes", "Whispered Waves", "Enchanted Echoes", "Radiant Rhythms", "Lyrical Luminescence", "Sonorous Stories", "Ethereal Episodes", "Resonant Reverie", "Mellow Moments", "Tranquil Tunes", "Dreamy Dispatch", "Ambient Adventures", "Echoic Excursions", "Sonic Serenity", "Vibrato Vignettes"];
+const radioGenres = ["Classic Rock Anthems", "Smooth Jazz Sessions", "Country Favorites", "Urban Beats", "Indie Discovery", "Soul and R&B Mix", "Blues Breaks", "Hip Hop Highlights", "Folk and Americana Journeys", "Classical Masterpieces", "Pop Chart-Toppers", "Alternative Explorations", "Acoustic Serenity", "Global Grooves", "Latin Rhythms", "Talk Show Insights", "Podcast Picks", "Science and Tech Trends", "Health and Wellness Hub", "Laugh Lounge", "Tech Talk Today", "Culinary Conversations"];
+const musicGenres = ["Rock", "Jazz", "Pop", "Hip Hop/Rap", "Classical", "Blues", "Country", "Electronic Dance Music (EDM)", "Folk", "Reggae", "Alternative", "Rhythm and Blues (R&B)", "Metal", "Soul", "Punk", "Funk", "Indie", "Latin", "World Music", "Acoustic", "Ska", "Gospel", "Ambient", "Techno", "House", "Dubstep", "Raggae", "Salsa", "Bluegrass", "Disco"]
+const podcastTopics = ["True Crime Mysteries", "Personal Growth Journeys", "Science and Technology Insights", "Comedy and Laughter Therapy", "History Unveiled", "Business and Entrepreneurship Chronicles", "Culinary Adventures and Food Stories", "Health and Wellness Wisdom", "Literary Escapades and Book Reviews", "Travel Tales and Destination Discoveries", "Pop Culture Commentary", "Environmental Explorations", "Music Moods and Melodies", "Parenting Perspectives", "Sports Stories and Insights", "Mindfulness and Meditation Moments", "Political Ponderings", "Educational Excursions", "Art and Creativity Spotlights", "Interviews with Inspiring Individuals", "Film and TV Show Reviews", "Spirituality and Metaphysical Musings", "Gaming Galore", "Fashion and Style Trends", "Social Media Stories and Trends", "Relationship Realities", "Educational Entertainment", "Motivational Moments", "Science Fiction and Fantasy Fables", "Documentary Deep Dives"]
+
+const songsDB = generateRandomItemsDatabase(musicGenres, songName, 1, 3);
+const radioDB = generateRandomItemsDatabase(radioGenres, radioName, 1, 1);
+const podcastDB = generateRandomItemsDatabase(podcastTopics, radioName, 1, 1);
+
+function displayMediaItem(db) {
     const mainContainer = document.getElementById('main-container');
     mainContainer.innerHTML = '';
 
     const itemTemplate = document.getElementById('media-item');
     const genreTemplate = document.getElementById('genre');
-    const db = generateRandomSongsDatabase();
-
-    // const genreList = document.createElement('div');
-    // genreList.classList.add('row');
 
     for (const [genre, songs] of Object.entries(db)) {
         const genreClone = document.importNode(genreTemplate.content, true);
@@ -32,8 +38,8 @@ function displaySongs() {
 
             const mediaBody = clone.querySelector('.media-body');
             mediaBody.innerHTML = `
-              <span>${song.title}</span><br>
-              <span>Artist: ${song.artist}</span><br>
+              <span style="font-size:1.05rem">${song.title}</span><br>
+              <span style="font-size:0.9rem">Artist: ${song.artist}</span><br>
             `;
 
             songList.appendChild(clone);
@@ -46,28 +52,26 @@ function displaySongs() {
     // mainContainer.appendChild(genreList);
 }
 
-function generateRandomSongsDatabase() {
-    let songsDatabase = {};
-    let genres = ["Rock", "Pop", "Hip-Hop", "Country", "Rap", "Electronic", "Folk", "Indie", "Metal", "Punk", "Soul", "Reggae", "Funk", "Blues", "Latin", "Jazz"];
-    let songName = ['Moonlight', 'Echoes', 'Serenade', 'Whisper', 'Enchantment', 'Velvet', 'Surrender', 'Stardust', 'Crystal', 'Echo', 'Cascade', 'Horizon', 'Reflection', 'Solitude', 'Eternity', 'Oasis', 'Aurora', 'Reverie', 'Lullaby', 'Sanctuary', 'Mirage', 'Harmony', 'Radiance', 'Misty', 'Ember', 'Enigma', 'Dusk', 'Ethereal'];
+function generateRandomItemsDatabase(genres, itemName, minLength, maxLength) {
+    let itemsDatabase = {};
     let peopleName = ['Linda', 'Barbara', 'Joseph', 'Paul', 'Ashley', 'Denise', 'Eugene', 'Ralph', 'Randy', 'Marilyn', 'Amber', 'Willie', 'Bruce', 'Judy', 'Ann', 'Gerald'];
 
     genres.forEach(genre => {
-        songsDatabase[genre] = [];
-        let songsNumber = Math.floor(Math.random() * 10) + 1; // Generate a random number of songs between 1 and 10 for each genre
+        itemsDatabase[genre] = [];
+        let itemsNumber = Math.floor(Math.random() * 10) + 1; // Generate a random number of items between 1 and 10 for each genre
 
-        for (let i = 0; i < songsNumber; i++) {
-            let song = {
-                title: randomName(songName, 1, 3),
+        for (let i = 0; i < itemsNumber; i++) {
+            let item = {
+                title: randomName(itemName, minLength, maxLength),
                 artist: randomName(peopleName, 1, 3),
                 image: 'src/img/neko-playing.gif'
             };
 
-            songsDatabase[genre].push(song);
+            itemsDatabase[genre].push(item);
         }
     });
 
-    return songsDatabase;
+    return itemsDatabase;
 }
 
 function randomName(words, minLength, maxLength) {
