@@ -312,7 +312,8 @@ audio {
   background: transparent;
   border: none;
   box-shadow: none;
-  width: 200px; 
+  width: 100px;
+  height: auto;
 }
 
 .bg-dark {
