@@ -9,12 +9,14 @@ div.right {
 	width: 20%; /* Adjusted to take up less width if needed */
 	height: 80%;
 	margin-right: 5%; /* This sets the distance from the right edge */
+  margin-top: 110px;
 }
 
 main.content {
   float: left;
   width: 70%; /* Adjust width as needed to leave space on the right if necessary */
-  margin-left: 3%
+  margin-left: 3%;
+  margin-top: 100px;
   /* Additional styles if needed */
 }
 
@@ -196,7 +198,7 @@ audio {
     margin-left: -60px; /* Use half of the width value to align the tooltip */
     opacity: 0;
     transition: opacity 0.3s;
-    font-size: 14px;  
+    font-size: 14px;
 }
 
 .login-page:hover .description{
@@ -334,10 +336,10 @@ audio {
 
 
 #logo {
-  position: absolute; 
-  left: 0; 
-  top: 0; 
-  transform: translate(-50%, -50%); 
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
   background: transparent;
   border: none;
   box-shadow: none;
@@ -345,11 +347,11 @@ audio {
 }
 
 .bg-dark {
-  background: linear-gradient(to right, 
+  background: linear-gradient(to right,
         #151515, /* Starting with black */
         rgba(99, 76, 190, 0.2),
         rgba(99, 76, 190, 0.6),
-        rgba(253, 64, 42, 0.5), 
+        rgba(253, 64, 42, 0.5),
         rgba(189, 149, 211, 0.4),
         rgba(31, 145, 242, 0.4),
         rgba(36, 226, 198, 0.5),
@@ -378,6 +380,6 @@ audio {
 }
 
 .nav-link:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
   text-shadow: 0 0 10px #152973;
 }
