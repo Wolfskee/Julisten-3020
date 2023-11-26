@@ -19,7 +19,7 @@ const podcastsDB = generateRandomItemsDatabase(podcastTopics, radioName, 1, 1);
 const radioDB = generateRandomItemsDatabase(radioGenres, radioName, 1, 1);
 
 function displayMediaItem(db) {
-    const mainContainer = document.getElementById('main-container');
+    const mainContainer = document.getElementById("main-container");
     mainContainer.innerHTML = '';
 
     const itemTemplate = document.getElementById('media-item');
@@ -49,15 +49,14 @@ function displayMediaItem(db) {
         });
 
         genreClone.appendChild(songList);
-        mainContainer.appendChild(genreClone)
+        mainContainer.appendChild(genreClone);
     }
-
-    // mainContainer.appendChild(genreList);
 }
 
 function generateRandomItemsDatabase(genres, itemName, minLength, maxLength) {
     let itemsDatabase = {};
-    let peopleName = ['Linda', 'Barbara', 'Joseph', 'Paul', 'Ashley', 'Denise', 'Eugene', 'Ralph', 'Randy', 'Marilyn', 'Amber', 'Willie', 'Bruce', 'Judy', 'Ann', 'Gerald'];
+    const peopleName = ['Linda', 'Barbara', 'Joseph', 'Paul', 'Ashley', 'Denise', 'Eugene', 'Ralph', 'Randy', 'Marilyn', 'Amber', 'Willie', 'Bruce', 'Judy', 'Ann', 'Gerald'];
+    const icons = ['2071-bear-artist.png', '2071-bear-winter.png', '2239-bird-strawberry.png', '3072-bear-beverage.png', '4176-fruit-cake.png', '4612-flowerssparkle.gif', '5705-neko-playing.gif', '5888-pink-donut.png', '7529-bear-dessert.png', '8887-caramel-pudding.png', 'at_work_mongmong.png', 'bath_mongmong.png', 'beach_mongmong.png', 'chpic.su_-_lazybunnyfilird_001.png', 'chpic.su_-_lazybunnyfilird_016.png', 'chpic.su_-_softandcutebun_012.png', 'chpic.su_-_softandcutebun_016.png', 'chpic.su_-_softandcutebun_026.png', 'confused_mongmong.png', 'exercise_mongmong.webp', 'fighting_mongmong.webp', 'float_mongmong.png', 'good_mongmong.png', 'lets go sausage.gif', 'love_bunny.png', 'picnic_mongmong.png', 'relax_mongmong.png', 'satisfied_mongmong.png', 'summer_mongmong.png', 'tada_mongmong.webp', 'vacation_mongmong.png', 'work_hard_mongmong.webp', 'worried_mongmong.png']
 
     genres.forEach(genre => {
         itemsDatabase[genre] = [];
@@ -67,7 +66,7 @@ function generateRandomItemsDatabase(genres, itemName, minLength, maxLength) {
             let item = {
                 title: randomName(itemName, minLength, maxLength),
                 artist: randomName(peopleName, 1, 3),
-                image: 'src/img/neko-playing.gif'
+                image: 'src/img/media-icons/' + icons[Math.floor(Math.random() * icons.length)]
             };
 
             itemsDatabase[genre].push(item);
