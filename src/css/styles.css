@@ -1,3 +1,5 @@
+@import "mystyle.css";
+
 body {
   background-color: #000;
   color: #fff;
@@ -5,29 +7,34 @@ body {
 }
 
 div.right {
-	float: right;
-	width: 20%; /* Adjusted to take up less width if needed */
-	height: 80%;
-	margin-right: 5%; /* This sets the distance from the right edge */
+  float: right;
+  width: 20%;
+  /* Adjusted to take up less width if needed */
+  height: 80%;
+  margin-right: 5%;
+  /* This sets the distance from the right edge */
   margin-top: 110px;
 }
 
 main.content {
   float: left;
-  width: 70%; /* Adjust width as needed to leave space on the right if necessary */
+  width: 70%;
+  /* Adjust width as needed to leave space on the right if necessary */
   margin-left: 3%;
   margin-top: 100px;
   /* Additional styles if needed */
 }
 
-#top-nav-bar-text{
+#top-nav-bar-text {
   height: 700px;
 }
+
 #top-nav-bar {
   position: fixed;
   width: 100%;
   height: 70px;
 }
+
 #droppable {
   border-radius: 10px;
   border: 3px dashed #8b8b8b;
@@ -38,10 +45,14 @@ main.content {
   right: 1%;
   top: 72px;
   background-color: #151515;
-  overflow-y: auto; /* Make the container vertically scrollable if content exceeds its height */
-  overflow-x: hidden; /* Hide horizontal overflow */
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: darkgray lightgray; /* For Firefox */
+  overflow-y: auto;
+  /* Make the container vertically scrollable if content exceeds its height */
+  overflow-x: hidden;
+  /* Hide horizontal overflow */
+  scrollbar-width: thin;
+  /* For Firefox */
+  scrollbar-color: darkgray lightgray;
+  /* For Firefox */
 
   display: flex;
   align-items: center;
@@ -92,27 +103,37 @@ main.content {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 3%; /* This will ensure the box stays 5% away from the right edge */
+  margin-right: 3%;
+  /* This will ensure the box stays 5% away from the right edge */
   margin-top: 20px;
-  background-color: transparent; /* Optional */
+  background-color: transparent;
+  /* Optional */
 }
 
 .album-art {
-  width: 200px; /* Or the size you prefer */
-  height: 200px; /* Or the size you prefer */
-  object-fit: cover; /* This will make sure that the image covers the area, without being stretched */
-  border-radius: 5px; /* Optional: if you want rounded corners */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Optional: if you want to add some shadow for depth */
+  width: 200px;
+  /* Or the size you prefer */
+  height: 200px;
+  /* Or the size you prefer */
+  object-fit: cover;
+  /* This will make sure that the image covers the area, without being stretched */
+  border-radius: 5px;
+  /* Optional: if you want rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Optional: if you want to add some shadow for depth */
 }
 
 .media-body h5 {
-  color: #fff; /* Make sure the title stands out against the background */
-  margin-bottom: 0; /* Optional: Adjust spacing as needed */
+  color: #fff;
+  /* Make sure the title stands out against the background */
+  margin-bottom: 0;
+  /* Optional: Adjust spacing as needed */
 }
 
 /* Adjust the .media padding if needed to align with your design */
 .media {
-  align-items: center; /* This will vertically center align the image and the text */
+  align-items: center;
+  /* This will vertically center align the image and the text */
   margin: auto;
 }
 
@@ -127,8 +148,10 @@ main.content {
 /* 可以调整轮播控制器的样式以更适应你的设计 */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #aaa; /* 轮播控制器的颜色 */
-  border-radius: 50%; /* 圆形的控制器 */
+  background-color: #aaa;
+  /* 轮播控制器的颜色 */
+  border-radius: 50%;
+  /* 圆形的控制器 */
 }
 
 /*player style*/
@@ -166,42 +189,46 @@ audio {
   margin-top: 10px;
 }
 
-#profile-pic{
-  background: transparent; /* Ensure no background is set */
-  border: none; /* Ensure no border is set */
-  box-shadow: none; /* Remove any box shadow */
-  width:50px;
+#profile-pic {
+  background: transparent;
+  /* Ensure no background is set */
+  border: none;
+  /* Ensure no border is set */
+  box-shadow: none;
+  /* Remove any box shadow */
+  width: 50px;
   border-radius: 45%;
 }
 
-#profile-pic:hover{
+#profile-pic:hover {
   transform: scale(1.1);
 }
 
-.login-page{
+.login-page {
   position: relative;
   display: inline-block;
 }
 
-.description{
-    visibility: hidden;
-    width: 120px;
-    background-color: transparent;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: -23px;
-    left: 50%;
-    margin-left: -60px; /* Use half of the width value to align the tooltip */
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 14px;
+.description {
+  visibility: hidden;
+  width: 120px;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -23px;
+  left: 50%;
+  margin-left: -60px;
+  /* Use half of the width value to align the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
 }
 
-.login-page:hover .description{
+.login-page:hover .description {
   visibility: visible;
   opacity: 1;
 }
@@ -209,44 +236,49 @@ audio {
 
 .overlay {
   display: none;
-  position: fixed; /* Fixed positioning relative to the viewport */
+  position: fixed;
+  /* Fixed positioning relative to the viewport */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  backdrop-filter: blur(10px); /* Blur effect */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
-  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
-  z-index: 998; /* Just below the popup z-index */
+  backdrop-filter: blur(10px);
+  /* Blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Semi-transparent black background */
+  z-index: 998;
+  /* Just below the popup z-index */
 }
 
 
 
-.popup{
+.popup {
   display: none;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
-  color:#ffffff;
+  color: #ffffff;
   border: none;
   outline: none;
   cursor: pointer;
   border-radius: 5px;
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: scale(0.9);
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 380px;
   padding: 20px 30px;
   background: rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 5px 5px rgb(0,0,0,0.15);
+  box-shadow: 2px 2px 5px 5px rgb(0, 0, 0, 0.15);
   border-radius: 10px;
 }
 
-.popup .close-btn{
+.popup .close-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -267,16 +299,17 @@ audio {
   font-size: 25px;
 }
 
-.popup .form .form-element{
+.popup .form .form-element {
   margin: 15px 0px;
 }
 
-.popup .form .form-element label{
+.popup .form .form-element label {
   font-size: 14px;
   color: #ffffff;
 }
 
-.popup .form .form-element input[type="email"], .popup .form .form-element input[type="password"]{
+.popup .form .form-element input[type="email"],
+.popup .form .form-element input[type="password"] {
   margin-top: 5px;
   display: block;
   width: 100%;
@@ -290,7 +323,7 @@ audio {
   margin-right: 5px;
 }
 
-.popup .form .form-element button{
+.popup .form .form-element button {
   width: 100%;
   height: 40px;
   border: none;
@@ -303,7 +336,7 @@ audio {
 }
 
 
-.popup .form .form-element a{
+.popup .form .form-element a {
   display: block;
   text-align: right;
   font-size: 15px;
@@ -322,16 +355,22 @@ audio {
 
 
 .popup .form .form-element a:hover {
-  color: #1a8cd8; /* Change color on hover */
-  text-decoration: underline; /* Add underline */
-  transition: color 0.3s; /* Smooth transition for color */
+  color: #1a8cd8;
+  /* Change color on hover */
+  text-decoration: underline;
+  /* Add underline */
+  transition: color 0.3s;
+  /* Smooth transition for color */
 }
 
 
 .popup .form .form-element button:hover {
-  background-color: #333; /* Darker background on hover */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for a 'lifted' effect */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  background-color: #333;
+  /* Darker background on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Slight shadow for a 'lifted' effect */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  /* Smooth transition */
 }
 
 
@@ -348,15 +387,17 @@ audio {
 
 .bg-dark {
   background: linear-gradient(to right,
-        #151515, /* Starting with black */
-        rgba(99, 76, 190, 0.2),
-        rgba(99, 76, 190, 0.6),
-        rgba(253, 64, 42, 0.5),
-        rgba(189, 149, 211, 0.4),
-        rgba(31, 145, 242, 0.4),
-        rgba(36, 226, 198, 0.5),
-        rgba(36, 226, 198, 0.2),
-        #151515  /* Ending with black */
+      #151515,
+      /* Starting with black */
+      rgba(99, 76, 190, 0.2),
+      rgba(99, 76, 190, 0.6),
+      rgba(253, 64, 42, 0.5),
+      rgba(189, 149, 211, 0.4),
+      rgba(31, 145, 242, 0.4),
+      rgba(36, 226, 198, 0.5),
+      rgba(36, 226, 198, 0.2),
+      #151515
+      /* Ending with black */
     );
   box-shadow: 0px -15px 15px -15px rgba(0, 0, 0, 0.8) inset;
   position: relative;
@@ -366,10 +407,12 @@ audio {
 .bg-dark::after {
   content: '';
   position: absolute;
-  bottom: -1px; /* Aligns with the bottom edge of the header */
+  bottom: -1px;
+  /* Aligns with the bottom edge of the header */
   left: 0;
   width: 100%;
-  height: 10px; /* Height of the fading effect */
+  height: 10px;
+  /* Height of the fading effect */
   background: linear-gradient(to bottom, transparent, black);
   z-index: 2;
 }
