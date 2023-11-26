@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listen - Music App</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="src\css\styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Listen - Music App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="src\css\styles.css">
 </head>
+
 <body>
 
-<!-- Header content -->
-<header class="bg-dark py-3">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-auto">
-        <div class="logo text-white font-weight-bold">JULISTEN</div>
-      </div>
-      <div class="col">
-        <nav class="nav justify-content-end">
-          <a href="#" class="nav-link text-white">Songs</a>
-          <a href="#" class="nav-link text-white">Podcasts</a>
-          <a href="#" class="nav-link text-white">Radio</a>
-        </nav>
-      </div>
-      <div class="col-auto">
-        <div class="search-container">
-          <input type="text" placeholder="Search" class="form-control search-input">
-          <button class="btn btn-secondary search-button">Search</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-<!-- ... -->
-
-<main class="content mt-3">
+	<!-- Header content -->
+	<header class="bg-dark py-3">
 		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-auto">
+					<div class="logo text-white font-weight-bold">JULISTEN</div>
+				</div>
+				<div class="col">
+					<nav class="nav justify-content-end">
+						<a href="#" class="nav-link text-white">Songs</a>
+						<a href="#" class="nav-link text-white">Podcasts</a>
+						<a href="#" class="nav-link text-white">Radio</a>
+					</nav>
+				</div>
+				<div class="col-auto">
+					<div class="search-container">
+						<input type="text" placeholder="Search" class="form-control search-input">
+						<button class="btn btn-secondary search-button">Search</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- ... -->
+
+	<main class="content mt-3">
+		<div id="main-container" class="container">
 			<section class="song-of-the-day mb-5">
 				<h2>Song of the day</h2>
 				<div id="recommendedCarousel" class="carousel slide" data-ride="carousel">
-					  <div class="carousel-inner">
+					<div class="carousel-inner">
 						<div class="carousel-item active">
-							  <div class="row">
+							<div class="row">
 								<div class="col">
 									<div class="media">
-										<img src="src\img\UsandThem.jpg" alt="Us and Them Album Cover" class="mr-3 album-art">
+										<img src="src\img\UsandThem.jpg" alt="Us and Them Album Cover"
+											class="mr-3 album-art">
 										<div class="media-body">
 											<h5 class="mt-0">Us and Them</h5>
 											by Pink Floyd
@@ -52,12 +55,12 @@
 										</div>
 									</div>
 								</div>
-							  </div>
+							</div>
 						</div>
 						<div class="carousel-item">
-						  <div class="row">
-							<div class="col">
-								<div class="media">
+							<div class="row">
+								<div class="col">
+									<div class="media">
 										<img src="src\img\11.jpg" alt="11 Cover" class="mr-3 album-art">
 										<div class="media-body">
 											<h5 class="mt-0">11</h5>
@@ -65,72 +68,93 @@
 											<div>3:48</div>
 										</div>
 									</div>
+								</div>
 							</div>
-						  </div>
 						</div>
 						<!-- Add more carousel items if needed -->
-					  </div>
-					  <a class="carousel-control-prev" href="#recommendedCarousel" role="button" data-slide="prev">
+					</div>
+					<a class="carousel-control-prev" href="#recommendedCarousel" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						<span class="sr-only">Previous</span>
-					  </a>
-					  <a class="carousel-control-next" href="#recommendedCarousel" role="button" data-slide="next">
+					</a>
+					<a class="carousel-control-next" href="#recommendedCarousel" role="button" data-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						<span class="sr-only">Next</span>
-					  </a>
-					</div>
+					</a>
+				</div>
 
 			</section>
-			<hr style="filter: alpha(opacity=100, finishopacity = 0, style=3)" width="100%" color = #fff size = 3></hr>
-		<div class="container-fluid" length: 500px>
-			  <div class="row">
-				<!-- 推荐歌曲的轮播部分 -->
-				<main class="col-lg-9">
-				  <section class="recommended mt-3">
-					<h3>Recommended Songs</h3>
+			<hr style="filter: alpha(opacity=100, finishopacity = 0, style=3)" width="100%" color=#fff size=3>
+			</hr>
+			<div class="container-fluid" length: 500px>
+				<div class="row">
+					<!-- 推荐歌曲的轮播部分 -->
+					<main class="col-lg-9">
+						<section class="recommended mt-3">
+							<h3>Recommended Songs</h3>
 
-						<div class="row">
-							<div class="col"><div class="recommended-song">Song 1</div></div>
-							<div class="col"><div class="recommended-song">Song 2</div></div>
-							<div class="col"><div class="recommended-song">Song 3</div></div>
-							<div class="col"><div class="recommended-song">Song 4</div></div>
-						</div>
-				  </section>
-				</main>
-			  </div>
-		</div>
-		</div>
-
-</main>
-
-<div class = "right">
-	<div class="container">
-		<section class="drag-drop">
-			<div>
-					Drag and Drop Media Here
+							<div class="row">
+								<div class="col">
+									<div class="recommended-song">Song 1</div>
+								</div>
+								<div class="col">
+									<div class="recommended-song">Song 2</div>
+								</div>
+								<div class="col">
+									<div class="recommended-song">Song 3</div>
+								</div>
+								<div class="col">
+									<div class="recommended-song">Song 4</div>
+								</div>
+							</div>
+						</section>
+					</main>
+				</div>
 			</div>
+		</div>
 
-		</section>
-    <div class="player">
-      <div class="player-album-art">
-        <img src="src\img\UsandThem.jpg" alt="Us and Them Album Cover" class="mr-3 album-art">
-      </div>
-      <div class="player-song-info">
-        <p class="title">Us and Them</p>
-        <p class="artist">Pink Floyd</p>
-      </div>
-      <audio id="audio-player" controls>
-        <source src="1.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+	</main>
+
+	<div class="right">
+		<div class="container">
+			<section class="drag-drop">
+				<div>
+					Drag and Drop Media Here
+				</div>
+
+			</section>
+			<div class="player">
+				<div class="player-album-art">
+					<img src="src\img\UsandThem.jpg" alt="Us and Them Album Cover" class="mr-3 album-art">
+				</div>
+				<div class="player-song-info">
+					<p class="title">Us and Them</p>
+					<p class="artist">Pink Floyd</p>
+				</div>
+				<audio id="audio-player" controls>
+					<source src="1.mp3" type="audio/mp3">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+		</div>
 	</div>
-</div>
 
+	<template id="media-item">
+		<div class="media align-left">
+			<img src="src\img\neko-playing.gif" class="mr-3 item-pic">
+			<div class="media-body"></div>
+		</div>
+	</template>
 
+	<template id="genre">
+		<div class="type-head"><span id="genre-name" class="h2"></span><button class="btn btn-secondary ml-2">more
+				></button>
+	</template>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="src/library.js"></script>
 </body>
+
 </html>

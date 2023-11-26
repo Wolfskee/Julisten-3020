@@ -1,3 +1,5 @@
+@import "mystyle.css";
+
 body {
   background-color: #000;
   color: #fff;
@@ -5,17 +7,20 @@ body {
 }
 
 div.right {
-	float: right;
-	width: 20%; /* Adjusted to take up less width if needed */
-	height: 80%;
-	margin-right: 5%; /* This sets the distance from the right edge */
+  float: right;
+  width: 20%;
+  /* Adjusted to take up less width if needed */
+  height: 80%;
+  margin-right: 5%;
+  /* This sets the distance from the right edge */
 }
 
 main.content {
   float: left;
-  width: 70%; /* Adjust width as needed to leave space on the right if necessary */
+  width: 70%;
+  /* Adjust width as needed to leave space on the right if necessary */
   margin-left: 3%
-  /* Additional styles if needed */
+    /* Additional styles if needed */
 }
 
 
@@ -61,27 +66,37 @@ main.content {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 3%; /* This will ensure the box stays 5% away from the right edge */
+  margin-right: 3%;
+  /* This will ensure the box stays 5% away from the right edge */
   margin-top: 20px;
-  background-color: transparent; /* Optional */
+  background-color: transparent;
+  /* Optional */
 }
 
 .album-art {
-  width: 200px; /* Or the size you prefer */
-  height: 200px; /* Or the size you prefer */
-  object-fit: cover; /* This will make sure that the image covers the area, without being stretched */
-  border-radius: 5px; /* Optional: if you want rounded corners */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Optional: if you want to add some shadow for depth */
+  width: 200px;
+  /* Or the size you prefer */
+  height: 200px;
+  /* Or the size you prefer */
+  object-fit: cover;
+  /* This will make sure that the image covers the area, without being stretched */
+  border-radius: 5px;
+  /* Optional: if you want rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Optional: if you want to add some shadow for depth */
 }
 
 .media-body h5 {
-  color: #fff; /* Make sure the title stands out against the background */
-  margin-bottom: 0; /* Optional: Adjust spacing as needed */
+  color: #fff;
+  /* Make sure the title stands out against the background */
+  margin-bottom: 0;
+  /* Optional: Adjust spacing as needed */
 }
 
 /* Adjust the .media padding if needed to align with your design */
 .media {
-  align-items: center; /* This will vertically center align the image and the text */
+  align-items: center;
+  /* This will vertically center align the image and the text */
   margin: auto;
 }
 
@@ -96,8 +111,10 @@ main.content {
 /* 可以调整轮播控制器的样式以更适应你的设计 */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #aaa; /* 轮播控制器的颜色 */
-  border-radius: 50%; /* 圆形的控制器 */
+  background-color: #aaa;
+  /* 轮播控制器的颜色 */
+  border-radius: 50%;
+  /* 圆形的控制器 */
 }
 
 /*player style*/
