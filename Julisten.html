@@ -10,36 +10,36 @@
 <body>
 
 <!-- Header content -->
-<header class="bg-dark py-3">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-auto">
-        <div class="logo text-white font-weight-bold">
-			<img id="logo" src="src/img/julestin.png" >
+<header id="top-nav-bar" class="bg-dark py-2"> <!-- Reduced padding from py-3 to py-2 -->
+	<div class="container">
+	  <div class="row align-items-center">
+		<div class="col-auto">
+		  <div class="logo text-white font-weight-bold">
+			<img id="logo" src="src/img/JULIISN.png">
+		  </div>
 		</div>
-      </div>
-      <div class="col">
-        <nav class="nav justify-content-end">
-          <a href="#" class="nav-link text-white">Songs</a>
-          <a href="#" class="nav-link text-white">Podcasts</a>
-          <a href="#" class="nav-link text-white">Radio</a>
-        </nav>
-      </div>
-      <div class="col-auto">
-        <div class="search-container">
-          <input type="text" placeholder="Search" class="form-control search-input">
-          <button class="btn btn-secondary search-button">Search</button>
-        </div>
-      </div>
-	  <div class="login-page">
-		<button type="submit"  id="profileButton" style="background: none; border: none; padding: 0; ">
-			<img id="profile-pic" src="src/img/profile.png" alt="profilebtn"  />
+		<div class="col">
+		  <nav class="nav justify-content-end">
+			<a href="#" class="nav-link text-white">Songs</a>
+			<a href="#" class="nav-link text-white">Podcasts</a>
+			<a href="#" class="nav-link text-white">Radio</a>
+		  </nav>
+		</div>
+		<div class="col-auto">
+		  <div class="search-container">
+			<input type="text" placeholder="Search" class="form-control search-input">
+			<button class="btn btn-secondary search-button">Search</button>
+		  </div>
+		</div>
+		<div class="login-page">
+		  <button type="submit" id="profileButton" style="background: none; border: none; padding: 0; ">
+			<img id="profile-pic" src="src/img/profile.png" alt="profilebtn" />
 			<span class="description">Profile</span>
-		</button>
+		  </button>
+		</div>
 	  </div>
-    </div>
-  </div>
-</header>
+	</div>
+  </header>
 <!-- ... -->
 
 <main class="content mt-3">
@@ -111,28 +111,17 @@
 
 </main>
 
-<div class = "right">
-	<div class="container">
-		<section class="drag-drop">
-			<div>
-					Drag and Drop Media Here
-			</div>
 
-		</section>
-    <div class="player">
-      <div class="player-album-art">
-        <img src="src\img\UsandThem.jpg" alt="Us and Them Album Cover" class="mr-3 album-art">
-      </div>
-      <div class="player-song-info">
-        <p class="title">Us and Them</p>
-        <p class="artist">Pink Floyd</p>
-      </div>
-      <audio id="audio-player" controls>
-        <source src="1.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+<div class = "right">
+	<div id="droppable" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<div id="dropHereText" class="emptyQueueText">
+			<p>Drop Media Here!</p>
+		  </div>
 	</div>
+
+	
+    <div class="player">
+      
 </div>
 <div class="overlay" style="display:none">
 <div class="popup" style="display: none;">
