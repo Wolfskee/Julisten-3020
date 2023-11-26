@@ -14,7 +14,7 @@ div.right {
 main.content {
   float: left;
   width: 70%; /* Adjust width as needed to leave space on the right if necessary */
-  margin-left: 3%
+  margin-left: 3%;
   /* Additional styles if needed */
 }
 
@@ -159,15 +159,15 @@ audio {
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
+    padding: 7px 0;
     position: absolute;
     z-index: 1;
-    bottom: -23px;
+    bottom: 80%;
     left: 50%;
     margin-left: -60px; /* Use half of the width value to align the tooltip */
     opacity: 0;
     transition: opacity 0.3s;
-    font-size: 14px;  
+    font-size: 13.5px;  
 }
 
 .login-page:hover .description{
