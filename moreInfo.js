@@ -11,7 +11,7 @@ function moreInfo(element){
 	var length = element.parentElement.querySelectorAll('div')[1].outerHTML;
 	var coverPic = element.parentElement.parentElement.querySelector('img').outerHTML;
 	var musicName = element.parentElement.querySelector('h5').textContent;
-	var mainPage = document.getElementById("leftBody");
+	var mainPage = document.getElementById("main-container");
 	var info
 	console.log(musicName);
 
