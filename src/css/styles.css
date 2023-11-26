@@ -27,6 +27,7 @@ main.content {
   height: 70px;
 }
 #droppable {
+  border-radius: 10px;
   border: 3px dashed #8b8b8b;
   color: #fff;
   height: 670px;
