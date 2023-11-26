@@ -5,15 +5,22 @@ var information = {
   ]
 };
 
+let homePageHTML = null;
+
 
 function moreInfo(element){
 	var singer = element.parentElement.querySelectorAll('div')[0].outerHTML;
 	var length = element.parentElement.querySelectorAll('div')[1].outerHTML;
 	var coverPic = element.parentElement.parentElement.querySelector('img').outerHTML;
 	var musicName = element.parentElement.querySelector('h5').textContent;
-	var mainPage = document.getElementById("leftBody");
+  var mainPage = document.getElementById("main-container");
+  homePage = document.getElementById("main-container");
 	var info
-	console.log(musicName);
+	console.log(homePage.children[0]);
+
+  if (!homePageHTML) {
+    homePageHTML = mainPage.innerHTML;
+  }
 
 
 	info = searchForKey(information, musicName);
@@ -22,7 +29,7 @@ function moreInfo(element){
 
 	mainPage.innerHTML = `
     <div class="content">
-			<button class="btn btn-secondary search-button"><a href=Julisten.html style="color: white"> <h2>&larr;</h2></a></button>
+			<button class="btn btn-secondary search-button" onclick="returnHome()"><h2>&larr;</h2></button>
 			<section class="song-of-the-day mb-5">
 				<div class="row">
 					`+coverPic+`
@@ -42,6 +49,15 @@ function moreInfo(element){
 			</div>
 		</div>
 	`;
+}
+
+function returnHome(){
+  var mainPage = document.getElementById("main-container");
+
+  // Set the innerHTML of the main page back to the original home page HTML
+  if (homePageHTML) {
+    mainPage.innerHTML = homePageHTML;
+  }
 }
 
 function searchForKey(info, keyToSearch) {
