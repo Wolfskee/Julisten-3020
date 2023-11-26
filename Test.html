@@ -20,9 +20,9 @@
                 </div>
                 <div class="col">
                     <nav class="nav justify-content-end">
-                        <a href="#" class="nav-link text-white">Songs</a>
-                        <a href="#" class="nav-link text-white">Podcasts</a>
-                        <a href="#" class="nav-link text-white">Radio</a>
+                        <a id="songs-link" href="#" class="nav-link text-white">Songs</a>
+                        <a id="podcasts-link" href="#" class="nav-link text-white">Podcasts</a>
+                        <a id="radio-link" href="#" class="nav-link text-white">Radio</a>
                     </nav>
                 </div>
                 <div class="col-auto">
@@ -147,8 +147,11 @@
     </template>
 
     <template id="genre">
-        <div class="type-head"><span id="genre-name" class="h2"></span><button class="btn btn-secondary more-btn">more
-                ></button>
+        <div class="type-head">
+            <span id="genre-name" class="h2"></span>
+            <span class="line"></span>
+            <button class="btn btn-secondary more-btn">more ></button>
+        </div>
     </template>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
