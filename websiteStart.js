@@ -16,15 +16,23 @@ gsap.from("header", {
     transformOrigin: "center bottom" 
 });
 
-gsap.to("#droppable", {
+var tl = gsap.timeline({ repeat: -1, yoyo: true });
+
+tl.to("#droppable", {
     duration: 4,
     y: "-20px",
+    scale: 0.9,
     rotationX: 10,
     rotationY: 5,
-    repeat: -1,
-    yoyo: true,
     ease: "power1.inOut"
 });
 
-
+tl.to("#droppable", {
+    duration: 4,
+    y: "0px",
+    scale: 1,
+    rotationX: 0,
+    rotationY: 0,
+    ease: "power1.inOut"
+});
 
