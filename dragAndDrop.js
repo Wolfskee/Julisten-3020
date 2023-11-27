@@ -139,6 +139,7 @@ function drop(event) {
     var imgElement = document.createElement("img");
     imgElement.src = imgPath;
     imgElement.className = "dragged-image";
+    imgElement.draggable = false
 
     // Set the width and height
     imgElement.style.width = "50px";
@@ -281,7 +282,7 @@ function drop(event) {
             else{
                 next = elementMouseIsOver;
             }
-        
+
             console.log("next: ", next);
             if (next.classList.contains("droppedMedia")) {
                 console.log("next holds droppedMedia");
