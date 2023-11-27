@@ -112,11 +112,14 @@ function drop(event) {
 
     event.preventDefault();
     var textData = event.dataTransfer.getData("draggedEl");
+    textData = textData.split("Artist")
+    textData = textData.join("<br>Artist")
     var imgPath = event.dataTransfer.getData("draggedElImagePath");
 
     // Create a container element to hold both text and image data
     var containerElement = document.createElement("div");
     containerElement.className = "dragged-item style-drag-item";
+    containerElement.draggable = true;
 
     // Create an image element and set its source
     var imgElement = document.createElement("img");
@@ -131,8 +134,8 @@ function drop(event) {
 
     // Create a text element and set its content
     var textElement = document.createElement("div");
-    textElement.textContent = textData;
-    textElement.className = "dragged-text";
+    textElement.innerHTML = textData;
+    textElement.className = "media-body";
     songContainer.appendChild(textElement);
 
     containerElement.appendChild(songContainer);

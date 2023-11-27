@@ -60,7 +60,7 @@ function generateRandomItemsDatabase(genres, itemName, minLength, maxLength) {
 
     genres.forEach(genre => {
         itemsDatabase[genre] = [];
-        let itemsNumber = Math.floor(Math.random() * 10) + 1; // Generate a random number of items between 1 and 10 for each genre
+        let itemsNumber = Math.floor(Math.random() * 10) + 4; // Generate a random number of items between 1 and 10 for each genre
 
         for (let i = 0; i < itemsNumber; i++) {
             let item = {

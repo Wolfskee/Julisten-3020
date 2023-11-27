@@ -44,7 +44,8 @@
     border: 3px dashed #8b8b8b;
     color: #fff;
     height: 670px;
-    width: 250px;
+    min-width: 250px;
+    width: 22%;
     position: fixed;
     right: 1%;
     top: 72px;
@@ -58,6 +59,8 @@
     align-items: center;
     justify-content: center;
 
+
+
 }
 #dropHereText {
     text-align: center;
@@ -65,4 +68,15 @@
 
 .highlight {
     border-top: 2px dashed red;
+}
+
+.center-song {
+    align-self: center;
+    width: 100%;
+}
+
+.style-drag-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
