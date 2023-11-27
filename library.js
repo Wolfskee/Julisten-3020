@@ -58,11 +58,11 @@ function displayMediaItem(db) {
 function generateRandomItemsDatabase(genres, itemName, minLength, maxLength) {
     let itemsDatabase = {};
     const peopleName = ['Linda', 'Barbara', 'Joseph', 'Paul', 'Ashley', 'Denise', 'Eugene', 'Ralph', 'Randy', 'Marilyn', 'Amber', 'Willie', 'Bruce', 'Judy', 'Ann', 'Gerald'];
-    const icons = ['2071-bear-artist.png', '2071-bear-winter.png', '2239-bird-strawberry.png', '3072-bear-beverage.png', '4176-fruit-cake.png', '4612-flowerssparkle.gif', '5705-neko-playing.gif', '5888-pink-donut.png', '7529-bear-dessert.png', '8887-caramel-pudding.png', 'at_work_mongmong.png', 'bath_mongmong.png', 'beach_mongmong.png', 'chpic.su_-_lazybunnyfilird_001.png', 'chpic.su_-_lazybunnyfilird_016.png', 'chpic.su_-_softandcutebun_012.png', 'chpic.su_-_softandcutebun_016.png', 'chpic.su_-_softandcutebun_026.png', 'confused_mongmong.png', 'exercise_mongmong.webp', 'fighting_mongmong.webp', 'float_mongmong.png', 'good_mongmong.png', 'lets go sausage.gif', 'love_bunny.png', 'picnic_mongmong.png', 'relax_mongmong.png', 'satisfied_mongmong.png', 'summer_mongmong.png', 'tada_mongmong.webp', 'vacation_mongmong.png', 'work_hard_mongmong.webp', 'worried_mongmong.png']
+    const icons = ['A.png', 'B.png', 'C.png', 'D.png', 'E.png', 'F.png', 'G.png', 'H.png', 'I.png', 'J.png', 'K.png', 'L.png', 'M.png', 'N.png', 'O.png', 'P.png', 'Q.png', 'R.png', 'S.png', 'T.png', 'U.png', 'V.png', 'W.png', 'X.png', 'Y.png', 'AA.png', 'BB.png', 'CC.png', 'DD.png', 'EE.png', 'FF.png', 'GG.png', 'HH.png', 'II.png', 'JJ.png', 'KK.png', 'LL.png', 'MM.png', 'NN.png', 'OO.png', 'PP.png', 'QQ.png', 'RR.png', 'SS.png', 'TT.png', 'UU.png', 'VV.png', 'WW.png']
 
     genres.forEach(genre => {
         itemsDatabase[genre] = [];
-        let itemsNumber = Math.floor(Math.random() * 10) + 1; // Generate a random number of items between 1 and 10 for each genre
+        let itemsNumber = Math.floor(Math.random() * 10) + 4; // Generate a random number of items between 1 and 10 for each genre
 
         for (let i = 0; i < itemsNumber; i++) {
             let item = {
