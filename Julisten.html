@@ -7,6 +7,8 @@
 	<title>Listen - Music App</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="src\css\styles.css">
+	<link rel="stylesheet" href="src\css\dragAndDropStyles.css">
+
 </head>
 
 <body>
@@ -167,8 +169,8 @@
 		</div>
 
 		<template id="media-item">
-			<div class="media-grid-item">
-				<img src="src\img\neko-playing.gif" class="mr-3 item-pic">
+			<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
+				<img src="src\img\neko-playing.gif" class="mr-3 item-pic" draggable="false">
 				<div class="media-body"></div>
 			</div>
 		</template>
@@ -190,6 +192,9 @@
 		<script src="websiteStart.js"></script>
 		<script src="moreInfo.js"></script>
 		<script src="library.js"></script>
+		<script src="dragAndDrop.js"></script>
+
+
 </body>
 
 </html>
