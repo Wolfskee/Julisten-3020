@@ -64,7 +64,13 @@ function dragStartMediaDropped(event) {
 
     // Store the dragged data
     console.log("IN dragStartMediaDropped.");
-    event.dataTransfer.setData("draggedEl", event.target.id);
+    var draggedText = event.target.querySelector('.media-body').textContent;
+    var draggedImagePath = event.target.querySelector('.dragged-image').src;
+    if (draggedText !== null) {
+        event.dataTransfer.setData("draggedEl", draggedText);
+        event.dataTransfer.setData("draggedElImagePath", draggedImagePath);
+    }
+
     checkIfFromQueue = 1;
 
 }
@@ -258,6 +264,8 @@ function drop(event) {
 
             var next = document.elementFromPoint(event.clientX, event.clientY);
             // Check if the next element has the class "droppedMedia"
+
+            console.log("next: ", next);
             if (next.classList.contains("droppedMedia")) {
                 console.log("next holds droppedMedia");
                 // If it does, insert the cloned element before the next element
