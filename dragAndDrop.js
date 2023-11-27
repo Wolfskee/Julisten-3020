@@ -1,4 +1,5 @@
 var checkIfFromQueue = 0;
+var unique_id = 0;
 
 function droppedMediaDragOver(event) {
     event.preventDefault();
@@ -66,9 +67,13 @@ function dragStartMediaDropped(event) {
     console.log("IN dragStartMediaDropped.");
     var draggedText = event.target.querySelector('.media-body').textContent;
     var draggedImagePath = event.target.querySelector('.dragged-image').src;
+    var elID = event.target.id;
+
+
     if (draggedText !== null) {
         event.dataTransfer.setData("draggedEl", draggedText);
         event.dataTransfer.setData("draggedElImagePath", draggedImagePath);
+        event.dataTransfer.setData("elID", elID);
     }
 
     checkIfFromQueue = 1;
@@ -99,6 +104,10 @@ function mediaItemDragStart(event) {
 
 }
 
+function dragStartImgInQueue(event){
+    droppable.style.background = "pink";
+}
+
 function queueNotEmpty() {
     const droppableContainer = document.getElementById("droppable");
     const hasElementsWithClass = droppableContainer.querySelector(".droppedMedia");
@@ -113,9 +122,6 @@ function drop(event) {
     var songContainer = document.createElement("div");
     songContainer.className = "media-grid-item";
 
-
-
-
     event.preventDefault();
     var textData = event.dataTransfer.getData("draggedEl");
     textData = textData.split("Artist")
@@ -126,6 +132,8 @@ function drop(event) {
     var containerElement = document.createElement("div");
     containerElement.className = "dragged-item style-drag-item";
     containerElement.draggable = true;
+    containerElement.id = unique_id;
+    unique_id++;
 
     // Create an image element and set its source
     var imgElement = document.createElement("img");
@@ -144,7 +152,9 @@ function drop(event) {
     textElement.className = "media-body";
     songContainer.appendChild(textElement);
 
+
     containerElement.appendChild(songContainer);
+
 
     // Apply styles to the container element
     //containerElement.style.height = "70px";
@@ -283,6 +293,14 @@ function drop(event) {
             }
         }
 
+    }
+    if (checkIfFromQueue){
+        var draggedEl_id = event.dataTransfer.getData("elID");
+        console.log("ID: ", draggedEl_id)
+        var draggedEl = document.getElementById(draggedEl_id);
+        var queue = document.getElementById("droppable");
+        queue.removeChild(draggedEl);
+        checkIfFromQueue = 0;
     }
 
 
