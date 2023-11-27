@@ -25,6 +25,11 @@ main.content {
   /* Additional styles if needed */
 }
 
+#leftBody.container{
+    width: 100%;
+    text-align: center;
+}
+
 #top-nav-bar-text {
   height: 700px;
 }
@@ -399,4 +404,9 @@ audio {
 .nav-link:hover {
   transform: scale(1.1);
   text-shadow: 0 0 10px #152973;
+}
+
+.enlarged {
+  transform: scale(1.4);
+  transition: transform 0.3s ease;
 }
