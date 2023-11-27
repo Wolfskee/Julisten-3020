@@ -111,7 +111,7 @@ function drop(event) {
     droppable.style.background = "#151515";
 
     var songContainer = document.createElement("div");
-    songContainer.className = "media-grid-item center-song";
+    songContainer.className = "media-grid-item";
 
 
 
@@ -262,9 +262,16 @@ function drop(event) {
         } else {
             // The element is not empty
 
-            var next = document.elementFromPoint(event.clientX, event.clientY);
-            // Check if the next element has the class "droppedMedia"
-
+            //var next = document.elementFromPoint(event.clientX, event.clientY);
+            var elementMouseIsOver = document.elementFromPoint(event.clientX, event.clientY);
+            var next;
+            if (elementMouseIsOver.classList.contains("droppedMedia") || elementMouseIsOver.classList.contains("media-body") || elementMouseIsOver.classList.contains("dragged-image") || elementMouseIsOver.classList.contains("media-grid-item")){
+                next = elementMouseIsOver.closest('.droppedMedia');
+            }
+            else{
+                next = elementMouseIsOver;
+            }
+        
             console.log("next: ", next);
             if (next.classList.contains("droppedMedia")) {
                 console.log("next holds droppedMedia");
