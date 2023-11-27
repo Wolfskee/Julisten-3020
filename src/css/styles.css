@@ -433,6 +433,6 @@ audio {
 }
 
 .enlarged {
-  transform: scale(1.4); /* 20%大小增加 */
-  transition: transform 0.3s ease; /* 平滑过渡动画 */
+  transform: scale(1.4);
+  transition: transform 0.3s ease;
 }
