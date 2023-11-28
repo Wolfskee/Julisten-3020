@@ -18,16 +18,17 @@ div.right {
 
 main.content {
   float: left;
-  width: 70%;
+  width: 75%;
   /* Adjust width as needed to leave space on the right if necessary */
   margin-left: 3%;
-  margin-top: 100px;;
+  margin-top: 100px;
+  ;
   /* Additional styles if needed */
 }
 
-#leftBody.container{
-    width: 100%;
-    text-align: center;
+#leftBody.container {
+  width: 100%;
+  text-align: center;
 }
 
 #top-nav-bar-text {
@@ -102,7 +103,7 @@ main.content {
   /* Optional: if you want to add some shadow for depth */
 }
 
-.media-body h5 {
+.media-info h5 {
   color: #fff;
   /* Make sure the title stands out against the background */
   margin-bottom: 0;
@@ -168,15 +169,19 @@ audio {
   margin-top: 10px;
 }
 
-#profile-pic , #goose{
-  background: transparent; /* Ensure no background is set */
-  border: none; /* Ensure no border is set */
-  box-shadow: none; /* Remove any box shadow */
-  width:50px;
+#profile-pic,
+#goose {
+  background: transparent;
+  /* Ensure no background is set */
+  border: none;
+  /* Ensure no border is set */
+  box-shadow: none;
+  /* Remove any box shadow */
+  width: 50px;
   border-radius: 45%;
 }
 
-#goose{
+#goose {
   display: none;
 }
 
@@ -189,24 +194,25 @@ audio {
   display: inline-block;
 }
 
-.description{
-    visibility: hidden;
-    width: 120px;
-    background-color: transparent;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 999;
-    bottom: -23px;
-    left: 50%;
-    margin-left: -60px; /* Use half of the width value to align the tooltip */
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 14px;
-    text-shadow: none;
-    box-shadow: none;
+.description {
+  visibility: hidden;
+  width: 120px;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 999;
+  bottom: -23px;
+  left: 50%;
+  margin-left: -60px;
+  /* Use half of the width value to align the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+  text-shadow: none;
+  box-shadow: none;
 }
 
 .login-page:hover .description {

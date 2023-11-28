@@ -1,3 +1,27 @@
+/* Hien's css file */
+
+.add-to-queue-btn {
+    border-radius: 50%;
+    align-content: center;
+    background: linear-gradient(to right, #9f291b, #145a97);
+    /* linear-gradient(to right,#e66465, #9198e5); */
+    transition: opacity 0s;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    color: #fff;
+    border: 1px solid;
+    margin: 2px;
+    margin-top: 6px;
+    box-sizing: border-box;
+}
+
+.add-to-queue-btn:hover .tooltip-text {
+    visibility: visible;
+}
+
 .align-left {
     margin: 0px;
 }
@@ -16,6 +40,7 @@
     height: 50px;
     object-fit: cover;
     border-radius: 5px;
+    margin-top: 12px;
 }
 
 .line {
@@ -25,10 +50,25 @@
     margin-left: 15px;
 }
 
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-left: 12px;
+    margin-bottom: 50px;
+}
+
 .media-grid-item {
     display: flex;
-    align-items: center;
-    width: 205px
+    width: 100%;
+    min-width: 205px;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.media-grid-item:hover {
+    background-color: #1a1a1a;
+    cursor: pointer;
 }
 
 .more-btn {
@@ -39,22 +79,35 @@
     white-space: nowrap;
 }
 
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    max-width: 150px;
+    color: white;
+    font-size: 12px;
+    background-color: rgba(12, 6, 52, 0.9);
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+    transform: translate(-50%, 10px);
+    white-space: nowrap;
+    align-items: center;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
 .type-head {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 20px 20px 12px 12px;
-}
-
-.media-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    margin-left: 20px;
-    margin-bottom: 50px;
-}
-
-.media-grid-item:hover {
-    background-color: #1a1a1a;
-    cursor: pointer;
+    margin: 12px 20px 0px 0px;
 }
