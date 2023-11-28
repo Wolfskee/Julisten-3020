@@ -220,13 +220,15 @@ audio {
     border-radius: 6px;
     padding: 5px 0;
     position: absolute;
-    z-index: 1;
+    z-index: 999;
     bottom: -23px;
     left: 50%;
     margin-left: -60px; /* Use half of the width value to align the tooltip */
     opacity: 0;
     transition: opacity 0.3s;
     font-size: 14px;
+    text-shadow: none;
+    box-shadow: none;
 }
 
 .login-page:hover .description {

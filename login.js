@@ -1,3 +1,4 @@
+$('#goose').hide();
 document.addEventListener('DOMContentLoaded', (event) => {
     // Get the elements
     var overlay = document.querySelector('.overlay');
