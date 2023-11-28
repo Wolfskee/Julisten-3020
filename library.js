@@ -40,12 +40,16 @@ function displayMediaItem(db) {
             image.alt = song.title;
 
             const mediaBody = clone.querySelector('.media-body');
-          
+
+
             mediaBody.innerHTML = `
               <span style="font-size:1.05rem">${song.title}</span><br>
               <span style="font-size:0.9rem">Artist: ${song.artist}</span><br>
-              <a href="javascript:void(0);" onclick="moreInfo(this)" style="color: white"><u>More Info</u></a>
+              <button class="add-item-to-queue" onclick="addButtonHandler(this)">+</button>
+              <a href="javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false><u>More Info</u></a>
             `;
+
+
 
             songList.appendChild(clone);
         });

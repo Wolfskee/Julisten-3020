@@ -52,8 +52,9 @@
     background-color: #151515;
     overflow-y: auto; /* Make the container vertically scrollable if content exceeds its height */
     overflow-x: hidden; /* Hide horizontal overflow */
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: darkgray lightgray; /* For Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: darkgray lightgray;
+    padding-bottom: 250px;
 
     display: flex;
     align-items: center;

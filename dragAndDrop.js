@@ -87,6 +87,7 @@ function mediaItemDragStart(event) {
 
     console.log("in media-item drag start function");
     var draggedText = event.target.querySelector('.media-body').textContent;
+    console.log(event.target.querySelector('.media-body'));
     var draggedImagePath = event.target.querySelector('.item-pic').src;
 
     console.log("draggedText: ", draggedText);
@@ -107,8 +108,16 @@ function queueNotEmpty() {
 }
 
 
-function drop(event) {
+function drop(event, artist, songs, img) {
+
     droppable.style.background = "#151515";
+    var textData;
+    var imgPath;
+
+    if(artist != null && songs !=null && img != null){
+      artist = artist.replace(/[\r\n]/g,"");
+      songs = songs.replace(/[\r\n]/g,"");
+    }
 
     var songContainer = document.createElement("div");
     songContainer.className = "media-grid-item center-song";
@@ -116,12 +125,20 @@ function drop(event) {
 
 
 
-    event.preventDefault();
-    var textData = event.dataTransfer.getData("draggedEl");
-    textData = textData.split("Artist")
-    textData = textData.join("<br>Artist")
-    var imgPath = event.dataTransfer.getData("draggedElImagePath");
-
+    if(event == null){
+      textData = songs +" "+ artist;
+      imgPath = img;
+    }else{
+      event.preventDefault();
+      textData = event.dataTransfer.getData("draggedEl");
+      textData = textData.split("Artist");
+      var temp = textData[1].split("+");
+      textData.pop();
+      textData.push(temp[0]);
+      console.log(textData);
+      textData = textData.join("<br>Artist");
+      imgPath = event.dataTransfer.getData("draggedElImagePath");
+    }
     // Create a container element to hold both text and image data
     var containerElement = document.createElement("div");
     containerElement.className = "dragged-item style-drag-item";
@@ -243,6 +260,7 @@ function drop(event) {
             }
         });
 
+
         if (!queueNotEmpty()) {
             // The drop container (droppable) is empty
             droppable.style.borderStyle = "solid";
@@ -259,7 +277,11 @@ function drop(event) {
             }
 
             droppable.style.display = 'block';
-        } else {
+        }
+        else if (event === null){
+          document.getElementById("droppable").append(clonedElement);
+        }
+        else {
             // The element is not empty
 
             var next = document.elementFromPoint(event.clientX, event.clientY);
@@ -279,4 +301,16 @@ function drop(event) {
     }
 
 
+}
+
+function addButtonHandler(element){
+
+  var draggedText = element.parentElement.textContent;
+  var song = draggedText.split("+")[0].split("Artist: ")[0]
+  var artist = "<br> Artist: " + draggedText.split("+")[0].split("Artist: ")[1]
+  var img = element.parentElement.previousSibling.previousSibling.src;
+  //console.log(img);
+
+
+  drop(null, artist,song,img);
 }
