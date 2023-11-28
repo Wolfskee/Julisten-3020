@@ -28,6 +28,7 @@
 .media-grid-item {
     display: flex;
     align-items: center;
+    width: 205px
 }
 
 .more-btn {
@@ -51,4 +52,9 @@
     grid-gap: 10px;
     margin-left: 20px;
     margin-bottom: 50px;
+}
+
+.media-grid-item:hover {
+    background-color: #1a1a1a;
+    cursor: pointer;
 }
