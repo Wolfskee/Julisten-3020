@@ -176,6 +176,10 @@ audio {
   border-radius: 45%;
 }
 
+#goose{
+  display: none;
+}
+
 #profile-pic:hover {
   transform: scale(1.1);
 }

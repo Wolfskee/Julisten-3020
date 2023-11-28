@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             $(this).css('transform', 'translate(-50%, -50%) scale(0.9)');
         });
       }
-
       function signedIn() {
         if (emailPattern.test($('#email').val()) && $('#password').val().length > 1) {
           // Hide the sign-in popup
