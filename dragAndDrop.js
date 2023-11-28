@@ -1,4 +1,5 @@
 var checkIfFromQueue = 0;
+var unique_id = 0;
 
 function droppedMediaDragOver(event) {
     event.preventDefault();
@@ -66,9 +67,13 @@ function dragStartMediaDropped(event) {
     console.log("IN dragStartMediaDropped.");
     var draggedText = event.target.querySelector('.media-body').textContent;
     var draggedImagePath = event.target.querySelector('.dragged-image').src;
+    var elID = event.target.id;
+
+
     if (draggedText !== null) {
         event.dataTransfer.setData("draggedEl", draggedText);
         event.dataTransfer.setData("draggedElImagePath", draggedImagePath);
+        event.dataTransfer.setData("elID", elID);
     }
 
     checkIfFromQueue = 1;
@@ -100,6 +105,10 @@ function mediaItemDragStart(event) {
 
 }
 
+function dragStartImgInQueue(event){
+    droppable.style.background = "pink";
+}
+
 function queueNotEmpty() {
     const droppableContainer = document.getElementById("droppable");
     const hasElementsWithClass = droppableContainer.querySelector(".droppedMedia");
@@ -120,10 +129,7 @@ function drop(event, artist, songs, img) {
     }
 
     var songContainer = document.createElement("div");
-    songContainer.className = "media-grid-item center-song";
-
-
-
+    songContainer.className = "media-grid-item";
 
     if(event == null){
       textData = songs +" "+ artist;
@@ -143,11 +149,14 @@ function drop(event, artist, songs, img) {
     var containerElement = document.createElement("div");
     containerElement.className = "dragged-item style-drag-item";
     containerElement.draggable = true;
+    containerElement.id = unique_id;
+    unique_id++;
 
     // Create an image element and set its source
     var imgElement = document.createElement("img");
     imgElement.src = imgPath;
     imgElement.className = "dragged-image";
+    imgElement.draggable = false
 
     // Set the width and height
     imgElement.style.width = "50px";
@@ -161,7 +170,9 @@ function drop(event, artist, songs, img) {
     textElement.className = "media-body";
     songContainer.appendChild(textElement);
 
+
     containerElement.appendChild(songContainer);
+
 
     // Apply styles to the container element
     //containerElement.style.height = "70px";
@@ -283,9 +294,16 @@ function drop(event, artist, songs, img) {
         }
         else {
             // The element is not empty
-
-            var next = document.elementFromPoint(event.clientX, event.clientY);
-            // Check if the next element has the class "droppedMedia"
+            console.log(event);
+            //var next = document.elementFromPoint(event.clientX, event.clientY);
+            var elementMouseIsOver = document.elementFromPoint(event.clientX, event.clientY);
+            var next;
+            if (elementMouseIsOver.classList.contains("droppedMedia") || elementMouseIsOver.classList.contains("media-body") || elementMouseIsOver.classList.contains("dragged-image") || elementMouseIsOver.classList.contains("media-grid-item")){
+                next = elementMouseIsOver.closest('.droppedMedia');
+            }
+            else{
+                next = elementMouseIsOver;
+            }
 
             console.log("next: ", next);
             if (next.classList.contains("droppedMedia")) {
@@ -298,6 +316,14 @@ function drop(event, artist, songs, img) {
             }
         }
 
+    }
+    if (checkIfFromQueue){
+        var draggedEl_id = event.dataTransfer.getData("elID");
+        console.log("ID: ", draggedEl_id)
+        var draggedEl = document.getElementById(draggedEl_id);
+        var queue = document.getElementById("droppable");
+        queue.removeChild(draggedEl);
+        checkIfFromQueue = 0;
     }
 
 
