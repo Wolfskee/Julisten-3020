@@ -8,7 +8,9 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="src\css\styles.css">
 	<link rel="stylesheet" href="src\css\dragAndDropStyles.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="src/css/registration.css">
 
 </head>
@@ -40,7 +42,7 @@
 				<div class="login-page">
 					<button type="submit" id="profileButton" style="background: none; border: none; padding: 0; ">
 						<img id="profile-pic" src="src/img/profile.png" alt="profilebtn" />
-						<img id="goose" src="src/img/littlegoose.jpeg"/>
+						<img id="goose" src="src/img/littlegoose.jpeg" />
 						<span class="description">Profile</span>
 					</button>
 				</div>
@@ -61,7 +63,7 @@
 									<div class="media">
 										<img src="src\img\UsandThem.jpg" alt="Us and Them Album Cover"
 											class="mr-3 album-art">
-										<div class="media-body">
+										<div class="media-info">
 											<h5 class="mt-0">Us and Them</h5>
 											<div>by Pink Floyd</div>
 											<div>7:48</div>
@@ -77,7 +79,7 @@
 								<div class="col">
 									<div class="media">
 										<img src="src\img\11.jpg" alt="11 Cover" class="mr-3 album-art">
-										<div class="media-body">
+										<div class="media-info">
 											<h5 class="mt-0">11</h5>
 											<div>by GEM</div>
 											<div>3:48</div>
@@ -214,7 +216,7 @@
 						<input type="checkbox" id="pref5">
 						<label for="pref6">Indie</label>
 						<input type="checkbox" id="pref6">
-						
+
 						<label for="pref7">Punk Rock</label>
 						<input type="checkbox" id="pref7">
 						<label for="pref8">Comedy</label>
@@ -234,7 +236,7 @@
 						<input type="checkbox" id="pref14">
 						<label for="pref15">Folk</label>
 						<input type="checkbox" id="pref15">
-						
+
 						<label for="pref16">Kids and Family</label>
 						<input type="checkbox" id="pref16">
 						<label for="pref17">Jazz</label>
@@ -253,9 +255,28 @@
 		</div>
 
 		<template id="media-item">
-			<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
+			<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+				ondragend="handleDragEnd(event)">
 				<img src="src\img\neko-playing.gif" class="mr-3 item-pic" draggable="false">
-				<div class="media-body"></div>
+				<div class="media-body">
+					<div class="media-info"></div>
+					<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable=false>
+						<icon>
+							<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+								style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+						</icon>
+						<span class="tooltip-text">Add song to Queue</span>
+					</button>
+					<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
+						<u>More Info</u></a> -->
+					<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable=false>
+						<icon>
+							<img src="src\img\info-icon.svg" alt="More info"
+								style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+						</icon>
+						<span class="tooltip-text"><span>More info</span></span>
+					</button>
+				</div>
 			</div>
 		</template>
 
@@ -266,7 +287,7 @@
 				<button class="btn btn-secondary more-btn">more ></button>
 			</div>
 		</template>
-<!-- recommend part -->
+		<!-- recommend part -->
 		<!-- carousel effect -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 		<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>-->
