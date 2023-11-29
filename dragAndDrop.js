@@ -61,7 +61,6 @@ function allowDrop(event) {
 }
 
 function dragStartMediaDropped(event) {
-    droppable.style.background = "green";
 
     // Store the dragged data
     console.log("IN dragStartMediaDropped.");
@@ -196,7 +195,6 @@ function drop(event, artist, songs, img) {
 
     // Check if the dragged element has a specific class
     if (textData === "") {  //added the 1 === 0 cause I don't want this path to be taken rn
-        droppable.style.background = "blue";
         checkIfFromQueue = 0;
         //I'm gonna leave this for now so that I don't get too hung up o it but I'm stuggling to make it so that the elements that are
         //aleardy in the queue are deleted afterwards

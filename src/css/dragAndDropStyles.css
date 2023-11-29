@@ -68,7 +68,7 @@
 }
 
 .highlight {
-    border-top: 2px dashed red;
+    border-top: 2px dashed rgba(253, 64, 42, 0.5);
 }
 
 .center-song {
