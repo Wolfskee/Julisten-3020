@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="src/css/registration.css">
 	<link rel="stylesheet" href="src/css/socials.css">
 	<link rel="icon" href="src/img/JULIISN_header.png" type="image/png">
+	<link rel="stylesheet" href="src/css/socials.css">
 	<link rel="stylesheet" href="src/css/player.css">
 	<link rel="stylesheet" href="src/css/library.css">
 </head>
@@ -1225,6 +1226,38 @@
 				<span class="current-time">00:00</span>
 				<div class="progress-container" onclick="setSongPosition(this,event)">
 					<span class="progress-bar"></span>
+				</div>
+				<span class="total-time">01:32</span>
+			</div>
+		</div>
+
+
+		<div class="overlay" style="display:none">
+			<div class="popup" style="display: none;">
+				<div class="close-btn"> &times;</div>
+				<div class="form">
+					<h2>Log in</h2>
+					<div class="form-element">
+						<label for="email">Email</label>
+						<input type="email" id="email" placeholder="Enter email">
+					</div>
+					<div class="form-element">
+						<label for="password">Password</label>
+						<input type="password" id="password" placeholder="Enter password">
+					</div>
+					<div class="form-element">
+						<input type="checkbox" id="remember-me">
+						<label for="remember-me">Remember me</label>
+					</div>
+					<div class="form-element">
+						<button>Sign in</button>
+					</div>
+					<div class="form-element">
+						<a href="#">Forgot Password ?</a>
+					</div>
+					<div class="form-element" id="new-user">
+						<a href="#"> New to Julisin ?</a>
+					</div>
 				</div>
 				<span class="total-time">01:32</span>
 			</div>
