@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           showPopup();
         });
       
-        $('.close-btn').click(function() {
+        $('.popup .close-btn').click(function() {
           hidePopup();
         });
 
