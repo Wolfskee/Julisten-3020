@@ -65,7 +65,7 @@ function dragStartMediaDropped(event) {
 
     // Store the dragged data
     console.log("IN dragStartMediaDropped.");
-    var draggedText = event.target.querySelector('.media-body').textContent;
+    var draggedText = event.target.querySelector('.media-info').textContent;
     var draggedImagePath = event.target.querySelector('.dragged-image').src;
     var elID = event.target.id;
 
@@ -91,8 +91,8 @@ function handleDragEnd(event) {
 function mediaItemDragStart(event) {
 
     console.log("in media-item drag start function");
-    var draggedText = event.target.querySelector('.media-body').textContent;
-    console.log(event.target.querySelector('.media-body'));
+    var draggedText = event.target.querySelector('.media-info').textContent;
+    console.log(event.target.querySelector('.media-info'));
     var draggedImagePath = event.target.querySelector('.item-pic').src;
 
     console.log("draggedText: ", draggedText);
@@ -105,7 +105,7 @@ function mediaItemDragStart(event) {
 
 }
 
-function dragStartImgInQueue(event){
+function dragStartImgInQueue(event) {
     droppable.style.background = "pink";
 }
 
@@ -123,27 +123,27 @@ function drop(event, artist, songs, img) {
     var textData;
     var imgPath;
 
-    if(artist != null && songs !=null && img != null){
-      artist = artist.replace(/[\r\n]/g,"");
-      songs = songs.replace(/[\r\n]/g,"");
+    if (artist != null && songs != null && img != null) {
+        artist = artist.replace(/[\r\n]/g, "");
+        songs = songs.replace(/[\r\n]/g, "");
     }
 
     var songContainer = document.createElement("div");
     songContainer.className = "media-grid-item";
 
-    if(event == null){
-      textData = songs +" "+ artist;
-      imgPath = img;
-    }else{
-      event.preventDefault();
-      textData = event.dataTransfer.getData("draggedEl");
-      textData = textData.split("Artist");
-      var temp = textData[1].split("+");
-      textData.pop();
-      textData.push(temp[0]);
-      console.log(textData);
-      textData = textData.join("<br>Artist");
-      imgPath = event.dataTransfer.getData("draggedElImagePath");
+    if (event == null) {
+        textData = songs + " " + artist;
+        imgPath = img;
+    } else {
+        event.preventDefault();
+        textData = event.dataTransfer.getData("draggedEl");
+        textData = textData.split("Artist");
+        var temp = textData[1].split("+");
+        textData.pop();
+        textData.push(temp[0]);
+        console.log(textData);
+        textData = textData.join("<br>Artist");
+        imgPath = event.dataTransfer.getData("draggedElImagePath");
     }
     // Create a container element to hold both text and image data
     var containerElement = document.createElement("div");
@@ -167,7 +167,7 @@ function drop(event, artist, songs, img) {
     // Create a text element and set its content
     var textElement = document.createElement("div");
     textElement.innerHTML = textData;
-    textElement.className = "media-body";
+    textElement.className = "media-info";
     songContainer.appendChild(textElement);
 
 
@@ -289,8 +289,8 @@ function drop(event, artist, songs, img) {
 
             droppable.style.display = 'block';
         }
-        else if (event === null){
-          document.getElementById("droppable").append(clonedElement);
+        else if (event === null) {
+            document.getElementById("droppable").append(clonedElement);
         }
         else {
             // The element is not empty
@@ -298,10 +298,10 @@ function drop(event, artist, songs, img) {
             //var next = document.elementFromPoint(event.clientX, event.clientY);
             var elementMouseIsOver = document.elementFromPoint(event.clientX, event.clientY);
             var next;
-            if (elementMouseIsOver.classList.contains("droppedMedia") || elementMouseIsOver.classList.contains("media-body") || elementMouseIsOver.classList.contains("dragged-image") || elementMouseIsOver.classList.contains("media-grid-item")){
+            if (elementMouseIsOver.classList.contains("droppedMedia") || elementMouseIsOver.classList.contains("media-info") || elementMouseIsOver.classList.contains("dragged-image") || elementMouseIsOver.classList.contains("media-grid-item")) {
                 next = elementMouseIsOver.closest('.droppedMedia');
             }
-            else{
+            else {
                 next = elementMouseIsOver;
             }
 
@@ -317,7 +317,7 @@ function drop(event, artist, songs, img) {
         }
 
     }
-    if (checkIfFromQueue){
+    if (checkIfFromQueue) {
         var draggedEl_id = event.dataTransfer.getData("elID");
         console.log("ID: ", draggedEl_id)
         var draggedEl = document.getElementById(draggedEl_id);
@@ -329,14 +329,14 @@ function drop(event, artist, songs, img) {
 
 }
 
-function addButtonHandler(element){
+function addButtonHandler(element) {
 
-  var draggedText = element.parentElement.textContent;
-  var song = draggedText.split("+")[0].split("Artist: ")[0]
-  var artist = "<br> Artist: " + draggedText.split("+")[0].split("Artist: ")[1]
-  var img = element.parentElement.previousSibling.previousSibling.src;
-  //console.log(img);
+    var draggedText = element.parentElement.textContent;
+    var song = draggedText.split("+")[0].split("Artist: ")[0]
+    var artist = "<br> Artist: " + draggedText.split("+")[0].split("Artist: ")[1]
+    var img = element.parentElement.previousSibling.previousSibling.src;
+    //console.log(img);
 
 
-  drop(null, artist,song,img);
+    drop(null, artist, song, img);
 }
