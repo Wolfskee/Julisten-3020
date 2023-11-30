@@ -19,7 +19,7 @@ div.right {
 
 main.content {
   float: left;
-  width: 75%;
+  width: 70%;
   /* Adjust width as needed to leave space on the right if necessary */
   margin-left: 3%;
   margin-top: 100px;
