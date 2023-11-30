@@ -5,6 +5,7 @@
     /* Ensure no border is set */
     box-shadow: none;
     /* Remove any box shadow */
+    margin-right: 20px;
     width: 50px;
     border-radius: 35%;
     margin-left: 10px;
@@ -32,7 +33,7 @@
     z-index: 999;
     bottom: -23px;
     left: auto;
-    margin-left: -45px;
+    margin-left: -65px;
     /* Use half of the width value to align the tooltip */
     opacity: 0;
     transition: opacity 0.3s;

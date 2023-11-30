@@ -44,6 +44,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         $('.registration-inner .form .form-element button').click(function() {
             registered();
         });
+        $('.registration-outer').click(function(event) {
+          if (event.target === this) {
+            hideRegistration();
+          }
+        });
+      
 
       });
   });
+
+
