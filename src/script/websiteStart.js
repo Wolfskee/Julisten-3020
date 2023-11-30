@@ -67,21 +67,36 @@ document.addEventListener('DOMContentLoaded', function() {
         mutations.forEach(function(mutation) {
             if (mutation.target.id === 'droppable') {
                 var playerElement = document.querySelector('.player');
+                console.log(playerElement);
                 if (playerElement) {
-                    // 当 droppable 有子元素时显示 player，否则隐藏
-                    var albumCover = mutation.target.childNodes[3].childNodes[1].querySelector('img').src;
-                    var albumSongName = mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[0].split("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t              ")[1];
-                    var albumArtist = mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[1].split("Add")[0];
-                    var playerAlbum = playerElement.childNodes[1].childNodes[1].childNodes[0];
-                    //console.log(mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[1].split("Add")[0]);
-                    var playerSongName = playerElement.childNodes[1].childNodes[3];
-                    console.log(albumSongName);
+                    var albumCover;
+                    var albumSongName;
+                    var albumArtist;
+                    var playerAlbum;
+                    var playerSongAlbumCover;
+                    var playerSongName;
+                    var playerArtist;
+
+                    console.log(mutation.target.childNodes[3]);
+                    if(mutation.target.childNodes[3]){
+                      albumCover = mutation.target.childNodes[3].childNodes[1].querySelector('img').src;
+
+                      albumSongName = mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[0];
+                      albumArtist = mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[1].split("Add")[0];
+                      playerAlbum = playerElement.childNodes[1].childNodes[1].childNodes[0];
+                      //console.log(mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[1].split("Add")[0]);
+                      playerSongAlbumCover = playerElement.childNodes[1].childNodes[1].childNodes[1].querySelector('img');
+                      playerSongName = playerElement.childNodes[1].childNodes[1].childNodes[3];
+                      playerArtist = playerElement.childNodes[1].childNodes[1].childNodes[5];
+                      console.log(playerElement.childNodes[1].childNodes[1].childNodes[5]);
+                    }
 
                     if (mutation.target.children.length > 1 && mutation.target.children.id !== "dropHereText") {
                         playerElement.style.display = 'block'; // 或者是您希望的显示方式
-                        playerAlbum.src = albumCover;
+                        playerSongAlbumCover.src = albumCover;
                         playerSongName.innerHTML = albumSongName;
-                    } else {
+                        playerArtist.innerHTML = albumArtist;
+                    } else if (mutation.target.children.id !== "dropHereText"){
                         playerElement.style.display = 'none';
                     }
                 }
