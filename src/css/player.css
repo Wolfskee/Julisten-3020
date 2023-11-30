@@ -1,0 +1,86 @@
+.player {
+  display: flex;
+  flex-direction: column;
+  width: 300px; /* Adjust as needed */
+  background: #555;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: none;
+}
+
+.player-album{
+  width:70px;
+  height: auto;
+}
+
+.player-info {
+  margin-bottom: auto;
+}
+
+.song-title {
+  font-size: 20px;
+  color: #333;
+}
+
+.artist-name {
+  font-size: 15px;
+  color: #666;
+  margin-left: 75px;
+}
+
+.blenderBtn{
+  margin-left: 5px;
+}
+.blender{
+  width: 20px;
+  height: auto;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+}
+
+.current-time,
+.total-time {
+  margin: 0 10px;
+}
+
+.progress-container {
+  flex-grow: 1;
+  height: 5px;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-bar {
+  height: 5px;
+  background-color: #007bff;
+  width: 0%;
+}
+
+.buttonInPlayer {
+  display: flex;
+   gap: 90px; /* Adjust as needed */
+}
+
+.controlbuttons {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.controlbuttons:focus {
+  outline: none;
+}
+
+.controlbuttons:hover {
+  background-color: #555; /* Changes color on hover */
+}
+
+audio {
+  display: none; /* Hides the default HTML5 audio player */
+}
