@@ -7,23 +7,29 @@ body {
 }
 
 div.right {
-  float: right;
+  right: 1%;
   width: 20%;
   /* Adjusted to take up less width if needed */
   height: 80%;
   margin-right: 5%;
   /* This sets the distance from the right edge */
   margin-top: 110px;
+  position: fixed;
 }
 
 main.content {
   float: left;
-  width: 75%;
+  width: 70%;
   /* Adjust width as needed to leave space on the right if necessary */
   margin-left: 3%;
   margin-top: 100px;
   ;
   /* Additional styles if needed */
+}
+
+.backbutton {
+  margin-bottom: 20px;
+  border-radius: 50%;
 }
 
 #leftBody.container {
