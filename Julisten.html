@@ -8,13 +8,14 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="src\css\styles.css">
 	<link rel="stylesheet" href="src\css\dragAndDropStyles.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="src/css/registration.css">
 
 </head>
 
-<body>
-
+<body onload=addRecommendations()>
 	<!-- Header content -->
 	<header id="top-nav-bar" class="bg-dark py-2"> <!-- Reduced padding from py-3 to py-2 -->
 		<div class="container" id="leftBody">
@@ -40,7 +41,7 @@
 				<div class="login-page">
 					<button type="submit" id="profileButton" style="background: none; border: none; padding: 0; ">
 						<img id="profile-pic" src="src/img/profile.png" alt="profilebtn" />
-						<img id="goose" src="src/img/littlegoose.jpeg"/>
+						<img id="goose" src="src/img/littlegoose.jpeg" />
 						<span class="description">Profile</span>
 					</button>
 				</div>
@@ -106,26 +107,24 @@
 			<div class="container-fluid" length: 500px>
 				<div class="row">
 					<!-- recommend part -->
-					<main class="col-lg-9">
-						<section class="recommended mt-3">
-							<h3>Recommended Songs</h3>
+					<section class="recommended mt-3">
+						<h3>Recommended Songs</h3>
 
-							<div class="row">
-								<div class="col">
-									<div class="recommended-song">Song 1</div>
-								</div>
-								<div class="col">
-									<div class="recommended-song">Song 2</div>
-								</div>
-								<div class="col">
-									<div class="recommended-song">Song 3</div>
-								</div>
-								<div class="col">
-									<div class="recommended-song">Song 4</div>
-								</div>
+						<div class="row">
+							<div class="col">
+								<div class="recommended-song">Song 1</div>
 							</div>
-						</section>
-					</main>
+							<div class="col">
+								<div class="recommended-song">Song 2</div>
+							</div>
+							<div class="col">
+								<div class="recommended-song">Song 3</div>
+							</div>
+							<div class="col">
+								<div class="recommended-song">Song 4</div>
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
@@ -214,7 +213,7 @@
 						<input type="checkbox" id="pref5">
 						<label for="pref6">Indie</label>
 						<input type="checkbox" id="pref6">
-						
+
 						<label for="pref7">Punk Rock</label>
 						<input type="checkbox" id="pref7">
 						<label for="pref8">Comedy</label>
@@ -234,7 +233,7 @@
 						<input type="checkbox" id="pref14">
 						<label for="pref15">Folk</label>
 						<input type="checkbox" id="pref15">
-						
+
 						<label for="pref16">Kids and Family</label>
 						<input type="checkbox" id="pref16">
 						<label for="pref17">Jazz</label>
@@ -253,7 +252,8 @@
 		</div>
 
 		<template id="media-item">
-			<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
+			<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+				ondragend="handleDragEnd(event)">
 				<img src="src\img\neko-playing.gif" class="mr-3 item-pic" draggable="false">
 				<div class="media-body"></div>
 			</div>
@@ -266,7 +266,7 @@
 				<button class="btn btn-secondary more-btn">more ></button>
 			</div>
 		</template>
-<!-- recommend part -->
+		<!-- recommend part -->
 		<!-- carousel effect -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 		<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>-->
@@ -280,7 +280,6 @@
 		<script src="dragAndDrop.js"></script>
 		<script src="registration.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
 
 </body>

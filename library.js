@@ -49,8 +49,6 @@ function displayMediaItem(db) {
               <a href="javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false><u>More Info</u></a>
             `;
 
-
-
             songList.appendChild(clone);
         });
 
@@ -90,4 +88,32 @@ function randomName(words, minLength, maxLength) {
     }
 
     return titleWords.join(' ');
+}
+
+function addRecommendations() {
+    const titles = ["A day in the life", "Crazy in love", "Dreams", "Fight the power", "Get ur freak on", "Gimme shelter", "Hey ya", "Idioteque", "I want to hold your hand", "Respect", "Runaway", "Gasolina"];
+    const artists = ["The Beatles", "Beyoncé", "Fleetwood Mac", "Public Enemy", "Missy Elliott", "The Rolling Stones", "OutKast", "Radiohead", "The Beatles", "Aretha Franklin", "Kanye West", "Daddy Yankee"];
+    const mainContainer = document.getElementsByClassName("recommended")[0];
+    mainContainer.innerHTML = '<h3>Recommended Songs - Greatest of all time</h3>';
+
+    const itemTemplate = document.getElementById('media-item');
+    const songList = document.createElement('div');
+    songList.classList.add('media-grid');
+
+    for (const [id, song] of titles.entries()) {
+        const clone = document.importNode(itemTemplate.content, true);
+
+        const image = clone.querySelector('img');
+        image.src = `src/img/recs/${song.toLowerCase().replaceAll(" ", "-")}.webp`;
+        image.alt = song;
+
+        const mediaBody = clone.querySelector('.media-body');
+
+        mediaBody.innerHTML = `
+            <span style="font-size:1.05rem">${song}</span><br>
+            <span style="font-size:0.9rem">Artist: ${artists[i]}</span><br>`;
+
+        songList.appendChild(clone);
+    }
+    mainContainer.appendChild(songList);
 }
