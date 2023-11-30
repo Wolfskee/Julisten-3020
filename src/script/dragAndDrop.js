@@ -228,8 +228,8 @@ function drop(event, artist, songs, img) {
         var infoButton = document.createElement("button");
         infoButton.textContent = "Info";
         infoButton.classList.add("action-button"); // Add the CSS class to the info button
-        infoButton.addEventListener('click', function() {
-          moreInfo_callFromQueue(this);
+        infoButton.addEventListener('click', function () {
+            moreInfo_callFromQueue(this);
         });
         // infoButton.style.position = "absolute";
         // infoButton.style.right = "0"; // Position on the right
@@ -333,11 +333,9 @@ function drop(event, artist, songs, img) {
 function addButtonHandler(element) {
 
     var draggedText = element.parentElement.textContent;
-    var song = draggedText.split("+")[0].split("Artist: ")[0]
-    var artist = "<br> Artist: " + draggedText.split("+")[0].split("Artist: ")[1]
+    var song = draggedText.split("Add")[0].split("Artist: ")[0]
+    var artist = "<br> Artist: " + draggedText.split("Add")[0].split("Artist: ")[1]
     var img = element.parentElement.previousSibling.previousSibling.src;
-    //console.log(img);
-
 
     drop(null, artist, song, img);
 }
