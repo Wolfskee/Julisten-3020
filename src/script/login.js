@@ -43,6 +43,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
           signedIn();
         })
       });
+
+      $('.overlay').click(function(event) {
+        if (event.target === this) {
+          hidePopup();
+        }
+      });
       
   });
 
