@@ -62,6 +62,29 @@ for (var i = 0; i < links.length; i++) {
   child.addEventListener('click', handleLinkClick);
 }
 
-`links.forEach(link => {
-  link.addEventListener('click', handleLinkClick);
-});`
+document.addEventListener('DOMContentLoaded', function() {
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.target.id === 'droppable') {
+                var playerElement = document.querySelector('.player');
+                console.log(playerElement);
+                if (playerElement) {
+                    // 当 droppable 有子元素时显示 player，否则隐藏
+                    console.log(mutation.target.children.length);
+                    console.log(mutation.target.children.id);
+                    if (mutation.target.children.length > 1 && mutation.target.children.id !== "dropHereText") {
+                        playerElement.style.display = 'block'; // 或者是您希望的显示方式
+                    } else {
+                        playerElement.style.display = 'none';
+                    }
+                }
+            }
+        });
+    });
+
+    // 配置 observer
+    var config = { childList: true, subtree: true };
+    // 为 droppable 元素启动 observer
+    var droppableElement = document.getElementById('droppable');
+    observer.observe(droppableElement, config);
+});

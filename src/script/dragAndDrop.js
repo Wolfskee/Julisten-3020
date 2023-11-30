@@ -346,11 +346,13 @@ function addButtonHandler_sod(element) {
 
     var draggedText = element.parentElement.textContent.split("\n\t\t\t\t\t\t\t\t\t\t\t");
 
-    console.log(draggedText);
+    // console.log(draggedText);
     var song = draggedText[1]
     var artist = "<br> Artist: " + draggedText[2].split("by")[1]
     var img = element.parentElement.previousSibling.previousSibling.src;
-    //console.log(img);
+    console.log(artist);
+    console.log(song);
+    console.log(img);
 
 
     drop(null, artist, song, img);

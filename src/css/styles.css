@@ -131,49 +131,13 @@ main.content {
   color: #fff;
 }
 
-/* 可以调整轮播控制器的样式以更适应你的设计 */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #aaa;
-  /* 轮播控制器的颜色 */
   border-radius: 50%;
-  /* 圆形的控制器 */
+
 }
 
-/*player style*/
-.player {
-  background: Black;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 300px;
-  border-radius: 10px;
-}
-
-.player-album-art {
-  background-image: url('path_to_album_art.jpg');
-  background-size: cover;
-  height: 200px;
-  border-radius: 5px;
-}
-
-.player-song-info {
-  padding: 10px 0;
-}
-
-.player-song-info .title {
-  margin: 0;
-  font-weight: bold;
-}
-
-.player-song-info .artist {
-  margin: 0;
-  color: #555;
-}
-
-audio {
-  width: 100%;
-  margin-top: 10px;
-}
 
 #profile-pic,
 #goose {
