@@ -118,6 +118,8 @@ main.content {
 
 /* Adjust the .media padding if needed to align with your design */
 .media {
+  display: flex;
+  justify-content: center;
   align-items: center;
   /* This will vertically center align the image and the text */
   margin: auto;
