@@ -142,6 +142,14 @@ function display(searchResults){
 }
 
 
+const searchButtonInput = document.getElementById('search-button-input');
+searchButtonInput.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        onSearch();
+    }
+});
+
+
 var img1 = null;
 var img1Name = null;
 var img1Length = null;
