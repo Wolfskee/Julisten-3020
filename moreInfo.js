@@ -29,7 +29,7 @@ function moreInfo_SoD(element){
 
 	mainPage.innerHTML = `
     <div class="content">
-			<button class="btn btn-secondary search-button" onclick="returnHome()"><h2>&larr;</h2></button>
+			<button class="btn btn-secondary search-button backbutton" onclick="returnHome()"><h2>&larr;</h2></button>
 			<section class="song-of-the-day mb-5">
 				<div class="row">
 					`+coverPic+`
@@ -52,20 +52,31 @@ function moreInfo_SoD(element){
 }
 
 function moreInfo(element){
-	var musicName = element.parentElement.querySelectorAll('span')[0].outerHTML;
-  var singer = element.parentElement.querySelectorAll('span')[1].outerHTML;
+	const musicName = element.parentElement.querySelectorAll('span')[0].outerHTML;
+  const singer = element.parentElement.querySelectorAll('span')[1].outerHTML;
 	//var length = element.parentElement.querySelectorAll('div')[1].outerHTML;
-  var length = "NOT READY";
-	var coverPic = element.parentElement.parentElement.querySelector('img').outerHTML;
+  console.log(musicName);
+  var lengthMin = (Math.floor(Math.random()*2) + 3).toString();
+  var lengthSec = Math.ceil(Math.random() * 20);
+  if(lengthSec<10){
+    lengthSec = "0" + lengthSec.toString();
+  }
+  var length = lengthMin + ':'+lengthSec;
+	var coverPic = document.createElement("img")
+  coverPic.src = element.parentElement.parentElement.querySelector('img').src
+  coverPic.alt = element.parentElement.parentElement.querySelector('img').alt;
+  coverPic.className = "mr-3 album-art";
+  coverPic.draggable = false;
+  coverPic = coverPic.outerHTML;
   var mainPage = document.getElementById("main-container");
-	var info
+	var info;
 
 
 
 
   homePageHTML = mainPage.innerHTML;
 
-  console.log(homePageHTML);
+  //console.log(homePageHTML);
 
 	info = searchForKey(information, musicName);
 
@@ -77,7 +88,7 @@ function moreInfo(element){
 
 	mainPage.innerHTML = `
     <div class="content">
-			<button class="btn btn-secondary search-button" onclick="returnHome()"><h2>&larr;</h2></button>
+			<button class="btn btn-secondary search-button backbutton" onclick="returnHome()"><h2>&larr;</h2></button>
 			<section class="song-of-the-day mb-5">
 				<div class="row">
 					`+coverPic+`
@@ -97,6 +108,49 @@ function moreInfo(element){
 			</div>
 		</div>
 	`;
+}
+
+function moreInfo_callFromQueue(element){
+	var musicName = element.previousSibling.textContent.split("Artist: ")[0];
+  var singer = element.previousSibling.textContent.split("Artist: ")[1];
+	var coverPic = element.previousSibling.querySelector('img').outerHTML;
+  var mainPage = document.getElementById("main-container");
+  var info;
+
+  homePageHTML = mainPage.innerHTML;
+
+  // console.log(homePageHTML);
+  //
+	info = searchForKey(information, musicName);
+  //
+  if(info == undefined){
+    info = "This is a general description of "+musicName +"is a good music"
+  }
+
+	console.log(info);
+
+	mainPage.innerHTML = `
+     <div class="content">
+	 		<button class="btn btn-secondary search-button backbutton" onclick="returnHome()"><h2>&larr;</h2></button>
+	 		<section class="song-of-the-day mb-5">
+	 			<div class="row">
+	 				`+coverPic+`
+	 				<div class="col">
+	 					<h5>`+musicName+`</h5>
+	 					Artist: `+singer+`
+	 					<div>`+length+`</div>
+	 				</div>
+	 			</div>
+	 		</section>
+	 		<hr style="filter: alpha(opacity=100, finishopacity = 0, style=3)" width="100%" color = #fff size = 3></hr>
+	 		<div class="container-fluid" length: 500px>
+	 			<h4>Information</h4>
+	 				<div class="col">
+	 					`+info+`
+	 				</div>
+	 		</div>
+	 	</div>
+	 `;
 }
 
 function returnHome(){

@@ -74,8 +74,20 @@
 											<h5 class="mt-0">Us and Them</h5>
 											<div>by Pink Floyd</div>
 											<div>7:48</div>
-											<a href="javascript:void(0);" onclick="moreInfo_SoD(this)"
-												style="color: white"><u>More Info</u></a>
+											<!-- <a href="javascript:void(0);" onclick="moreInfo_SoD(this)" -->
+												<!-- style="color: white"><u>More Info</u></a> -->
+												<button class="add-to-queue-btn" onclick="addButtonHandler_sod(this)" draggable="false">
+													<icon>
+														<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+													</icon>
+													<span class="tooltip-text">Add song to Queue</span>
+												</button>
+												<button class="add-to-queue-btn" onclick="moreInfo_SoD(this)" draggable="false">
+													<icon>
+														<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+													</icon>
+													<span class="tooltip-text"><span>More info</span></span>
+												</button>
 										</div>
 									</div>
 								</div>
@@ -90,8 +102,20 @@
 											<h5 class="mt-0">11</h5>
 											<div>by GEM</div>
 											<div>3:48</div>
-											<a href="javascript:void(0);" onclick="moreInfo_SoD(this)"
-												style="color: white"><u>More Info</u></a>
+											<!-- <a href="javascript:void(0);" onclick="moreInfo_SoD(this)" -->
+												<!-- style="color: white"><u>More Info</u></a> -->
+											<button class="add-to-queue-btn" onclick="addButtonHandler_sod(this)" draggable="false">
+												<icon>
+													<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+												</icon>
+												<span class="tooltip-text">Add song to Queue</span>
+											</button>
+											<button class="add-to-queue-btn" onclick="moreInfo_SoD(this)" draggable="false">
+												<icon>
+													<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+												</icon>
+												<span class="tooltip-text"><span>More info</span></span>
+											</button>
 										</div>
 									</div>
 								</div>
@@ -137,6 +161,29 @@
 					</main>
 				</div>
 			</div>
+		</div>
+		<input type="checkbox" name="" id="check" style="visibility: hidden;">
+		<div class="socials-side">
+			<label for="check">
+				<span class="fas fa-times" id="times"></span>
+				<span class="fas fa-bars" id="bars" ></span>
+			</label>
+			<div class="head">Room</div>
+			<ul>
+				<li>
+					Khaled
+				</li>
+				<li>
+					Breanna
+				</li>
+				<li>
+					Eric
+				</li>
+				<li>
+					Luke
+				</li>
+				<li><button type="submit"> Leave Room</button></li>
+			</ul>
 		</div>
 
 	</main>
@@ -316,29 +363,6 @@
 			</div>
 		</template>
 
-		<input type="checkbox" name="" id="check" style="visibility: hidden;">
-		<div class="socials-side">
-			<label for="check">
-				<span class="fas fa-times" id="times"></span>
-				<span class="fas fa-bars" id="bars" ></span>
-			</label>
-			<div class="head">Room</div>
-			<ul>
-				<li>
-					Khaled
-				</li>
-				<li>
-					Breanna
-				</li>
-				<li>
-					Eric
-				</li>
-				<li>
-					Luke
-				</li>
-				<li><button type="submit"> Leave Room</button></li>
-			</ul>
-		</div>
 
 		<!-- recommend part -->
 		<!-- carousel effect -->
