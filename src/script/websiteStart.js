@@ -67,13 +67,20 @@ document.addEventListener('DOMContentLoaded', function() {
         mutations.forEach(function(mutation) {
             if (mutation.target.id === 'droppable') {
                 var playerElement = document.querySelector('.player');
-                console.log(playerElement);
                 if (playerElement) {
                     // 当 droppable 有子元素时显示 player，否则隐藏
-                    console.log(mutation.target.children.length);
-                    console.log(mutation.target.children.id);
+                    var albumCover = mutation.target.childNodes[3].childNodes[1].querySelector('img').src;
+                    var albumSongName = mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[0].split("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t              ")[1];
+                    var albumArtist = mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[1].split("Add")[0];
+                    var playerAlbum = playerElement.childNodes[1].childNodes[1].childNodes[0];
+                    //console.log(mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[1].split("Add")[0]);
+                    var playerSongName = playerElement.childNodes[1].childNodes[3];
+                    console.log(albumSongName);
+
                     if (mutation.target.children.length > 1 && mutation.target.children.id !== "dropHereText") {
                         playerElement.style.display = 'block'; // 或者是您希望的显示方式
+                        playerAlbum.src = albumCover;
+                        playerSongName.innerHTML = albumSongName;
                     } else {
                         playerElement.style.display = 'none';
                     }
