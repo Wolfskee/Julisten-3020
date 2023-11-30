@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 300px; /* Adjust as needed */
-  background: #555;
+  background: rgba(57, 55, 55, 0.4);
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -20,12 +20,12 @@
 
 .song-title {
   font-size: 20px;
-  color: #333;
+  color: #ffffff;
 }
 
 .artist-name {
   font-size: 15px;
-  color: #666;
+  color: #ffffff;
   margin-left: 75px;
 }
 
@@ -71,6 +71,7 @@
   border: none;
   font-size: 1.5em;
   cursor: pointer;
+  color: #ffffff;
 }
 
 .controlbuttons:focus {
@@ -78,7 +79,9 @@
 }
 
 .controlbuttons:hover {
-  background-color: #555; /* Changes color on hover */
+  background-color: #3b3737; /* Changes color on hover */
+  transform: scale(1.1);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
 audio {
