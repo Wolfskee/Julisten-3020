@@ -53,6 +53,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         $('#social-page').prop('disabled', false);
         hideSideBar();
       });
+      $('.socials-outer').click(function(event) {
+        if (event.target === this) {
+            hideSocials();
+        }
+    });
 
     });
   });
