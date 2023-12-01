@@ -41,13 +41,40 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-75%, -50%);
-    width: 500px;
+    transform: translate(-75%, -80%);
+    width: 800px;
     height: 250px;
     padding: 20px 30px;
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 2px 2px 5px 5px rgb(0, 0, 0, 0.15);
     border-radius: 10px;
+
+    .media-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0px;
+        margin-left: 0px;
+        overflow-y: scroll;
+        height: 250px;
+        padding-right: 8px;
+    }
+
+    .media-grid::-webkit-scrollbar {
+        display: block;
+        width: 7px;
+    }
+
+    .media-grid::-webkit-scrollbar-track {
+        background: #acabab;
+        border-left: solid 2px black;
+        border-right: solid 2px black;
+    }
+
+    .media-grid::-webkit-scrollbar-thumb {
+        background-color: #1a1a1a;
+        outline: 3px solid rgb(123, 122, 122);
+        border-radius: 24px;
+    }
 }
 
 /* .genre-inner h2 {

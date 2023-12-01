@@ -91,17 +91,22 @@ function randomName(words, minLength, maxLength) {
 function showGenre(element) {
     const genreName = element.parentElement.querySelectorAll("#genre-name")[0].innerText;
     $(".genre-outer").fadeIn(300); // Fade in the overlay
-    $(".genre-inner").css("transform", "translate(-75%, -50%) scale(1)").fadeIn(300);
+    $(".genre-inner").css("transform", "translate(-75%, -80%) scale(1)").fadeIn(300);
 
     const mediaType = $(".nav-link.enlarged")[0].innerText.toLowerCase();
     const db = eval(mediaType + "DB");
     displayMediaItem("genre-inner", Object.fromEntries(
         [Object.entries(db).find(([key, _]) => key === genreName)]));
+
+    $("#genre-inner > .type-head > .line").hide();
+    $("#genre-inner > .type-head > .more-btn").hide();
+    $("body").css("overflow-y", "hidden");
 }
 
 function hideGenre() {
     $('.genre-outer').fadeOut(300);
     $('.genre-inner').fadeOut(300, function () {
-        $(this).css('transform', 'translate(-75%, -50%) scale(0.9)');
+        $(this).css('transform', 'translate(-75%, -80%) scale(0.9)');
     });
+    $("body").css("overflow-y", "auto");
 }
