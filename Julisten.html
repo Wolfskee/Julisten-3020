@@ -12,10 +12,8 @@
 		integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="src/css/registration.css">
-	<link rel="stylesheet" href="src/css/socials.css">
 	<link rel="icon" href="src/img/JULIISN_header.png" type="image/png">
   <link rel="stylesheet" href="src/css/socials.css">
-	<link rel="stylesheet" href="src/css/player.css">
 </head>
 
 <body>
@@ -48,7 +46,6 @@
 						<img id="goose" src="src/img/littlegoose.jpeg" />
 						<span class="description">Profile</span>
 					</button>
-					<button type="submit" id="logoutBtn">Sign out</button>
 				</div>
 				<div class="social-page">
 					<button type="submit" id="social-page" style="background:none; border:none; padding: 0;">
@@ -64,13 +61,13 @@
 	<main class="content">
 		<div id="main-container" class="container">
 			<section class="song-of-the-day mb-5">
-				<h2>Songs of the day</h2>
+				<h2>Song of the day</h2>
 				<div id="recommendedCarousel" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<div class="row">
 								<div class="col">
-									<div class="media" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
+									<div class="media">
 										<img src="src\img\UsandThem.jpg" alt="Us and Them Album Cover"
 											class="mr-3 album-art">
 										<div class="media-info">
@@ -99,7 +96,7 @@
 						<div class="carousel-item">
 							<div class="row">
 								<div class="col">
-									<div class="media" draggable="true" ondragend="drop(null, GEM, "'11'","src\img\11.jpg")">
+									<div class="media">
 										<img src="src\img\11.jpg" alt="11 Cover" class="mr-3 album-art">
 										<div class="media-info">
 											<h5 class="mt-0">11</h5>
@@ -984,7 +981,7 @@
 				</div>
 			</div>
 		</div>
-		<input type="checkbox" name="" id="check" style="display: none;">
+		<input type="checkbox" name="" id="check" style="visibility: hidden;">
 		<div class="socials-side">
 			<label for="check">
 				<span class="fas fa-times" id="times"></span>
@@ -1018,31 +1015,10 @@
 			</div>
 		</div>
 
-		<!-- player -->
-		<div class="player">
-		  <div class="player-info">
-				<div class="row">
-					<span><img class="player-album" src="src\img\11.jpg" style></img></span>
-			    <span class="song-title">One</span>
-			    <span class="artist-name">Marcel Pequel</span>
-					<span class="blenderBtn"><img class="blender"  src="src\img\profile.png"></img><span>
-				</div>
-		  </div>
-			<div class="buttonInPlayer">
-		      <button class="controlbuttons" onclick="prevSong()">&#171;</button>
-		      <button class="controlbuttons" onclick="togglePlayPause()">&#9654;</button>
-		      <button class="controlbuttons" onclick="nextSong()">&#187;</button>
-		  </div>
-			<div class="player-controls">
-		    <span class="current-time">00:00</span>
-		    <div class="progress-container" onclick="setSongPosition(this,event)">
-			    <span class="progress-bar"></span>
-				</div>
-				<span class="total-time">01:32</span>
-				</div>
-			</div>
 
-	</div>
+		<div class="player">
+
+		</div>
 		<div class="overlay" style="display:none">
 			<div class="popup" style="display: none;">
 				<div class="close-btn"> &times;</div>
@@ -1074,103 +1050,103 @@
 		</div>
 
 
-	<div class="socials-outer">
-		<div class="socials-inner">
-			<h2>Join Room</h2>
-			<div class="close-btn">
-				&times
-			</div>
-			<div class="form">
-				<div class="form-element">
-					<input type="text" id="code" placeholder="Enter room code">
+		<div class="socials-outer">
+			<div class="socials-inner">
+				<h2>Join Room</h2>
+				<div class="close-btn">
+					&times
 				</div>
-				<div class="form-element">
-					<button>Join Room</button>
-				</div>
-				<div class="form-element">
-					<a href="#"> Create your own room ?</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="registration-outer">
-		<div class="registration-inner">
-			<h2>Register Now</h2>
-			<div class="close-btn">&times</div>
-			<div class="form">
-				<div class="form-element">
-					<label for="name">Name</label>
-					<input type="text" id="name" placeholder="Enter name">
-				</div>
-				<div class="form-element">
-					<label for="username">Username</label>
-					<input type="text" id="username" placeholder="Enter username">
-				</div>
-				<div class="form-element">
-					<label for="password">Password</label>
-					<input type="password" id="password" placeholder="Enter password">
-				</div>
-				<div class="form-element">
-					<label for="email">Email</label>
-					<input type="email" id="email" placeholder="Enter email">
-				</div>
-				<div class="form-element">
-					<label for="phoneNumber">Phone Number</label>
-					<input type="text" id="phone-number" placeholder="Enter phone number">
-				</div>
-
-				<h3>Media preferences</h3>
-				<div class="form-element">
-					<label for="pref1">Pop</label>
-					<input type="checkbox" id="pref1">
-					<label for="pref2">Rock</label>
-					<input type="checkbox" id="pref2">
-					<label for="pref3">EDM</label>
-					<input type="checkbox" id="pref3">
-					<label for="pref4">Soul</label>
-					<input type="checkbox" id="pref4">
-					<label for="pref5">Sports</label>
-					<input type="checkbox" id="pref5">
-					<label for="pref6">Indie</label>
-					<input type="checkbox" id="pref6">
-
-					<label for="pref7">Punk Rock</label>
-					<input type="checkbox" id="pref7">
-					<label for="pref8">Comedy</label>
-					<input type="checkbox" id="pref8">
-					<label for="pref9">True Crime</label>
-					<input type="checkbox" id="pref9">
-					<label for="pref10">Fiction</label>
-					<input type="checkbox" id="pref10">
-					<br>
-					<label for="pref11">Blues</label>
-					<input type="checkbox" id="pref11">
-					<label for="pref12">Hip-Hop</label>
-					<input type="checkbox" id="pref12">
-					<label for="pref13">TV</label>
-					<input type="checkbox" id="pref13">
-					<label for="pref14">Country</label>
-					<input type="checkbox" id="pref14">
-					<label for="pref15">Folk</label>
-					<input type="checkbox" id="pref15">
-
-					<label for="pref16">Kids and Family</label>
-					<input type="checkbox" id="pref16">
-					<label for="pref17">Jazz</label>
-					<input type="checkbox" id="pref17">
-					<label for="pref18">Metal</label>
-					<input type="checkbox" id="pref18">
-					<label for="pref19">Health/fitness</label>
-					<input type="checkbox" id="pref19">
-				</div>
-
-				<div class="form-element">
-					<button>Submit</button>
+				<div class="form">
+					<div class="form-element">
+						<input type="text" id="code" placeholder="Enter room code">
+					</div>
+					<div class="form-element">
+						<button>Join Room</button>
+					</div>
+					<div class="form-element">
+						<a href="#"> Create your own room ?</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+
+		<div class="registration-outer">
+			<div class="registration-inner">
+				<h2>Register Now</h2>
+				<div class="close-btn">&times</div>
+				<div class="form">
+					<div class="form-element">
+						<label for="name">Name</label>
+						<input type="text" id="name" placeholder="Enter name">
+					</div>
+					<div class="form-element">
+						<label for="username">Username</label>
+						<input type="text" id="username" placeholder="Enter username">
+					</div>
+					<div class="form-element">
+						<label for="password">Password</label>
+						<input type="password" id="password" placeholder="Enter password">
+					</div>
+					<div class="form-element">
+						<label for="email">Email</label>
+						<input type="email" id="email" placeholder="Enter email">
+					</div>
+					<div class="form-element">
+						<label for="phoneNumber">Phone Number</label>
+						<input type="text" id="phone-number" placeholder="Enter phone number">
+					</div>
+
+					<h3>Media preferences</h3>
+					<div class="form-element">
+						<label for="pref1">Pop</label>
+						<input type="checkbox" id="pref1">
+						<label for="pref2">Rock</label>
+						<input type="checkbox" id="pref2">
+						<label for="pref3">EDM</label>
+						<input type="checkbox" id="pref3">
+						<label for="pref4">Soul</label>
+						<input type="checkbox" id="pref4">
+						<label for="pref5">Sports</label>
+						<input type="checkbox" id="pref5">
+						<label for="pref6">Indie</label>
+						<input type="checkbox" id="pref6">
+
+						<label for="pref7">Punk Rock</label>
+						<input type="checkbox" id="pref7">
+						<label for="pref8">Comedy</label>
+						<input type="checkbox" id="pref8">
+						<label for="pref9">True Crime</label>
+						<input type="checkbox" id="pref9">
+						<label for="pref10">Fiction</label>
+						<input type="checkbox" id="pref10">
+						<br>
+						<label for="pref11">Blues</label>
+						<input type="checkbox" id="pref11">
+						<label for="pref12">Hip-Hop</label>
+						<input type="checkbox" id="pref12">
+						<label for="pref13">TV</label>
+						<input type="checkbox" id="pref13">
+						<label for="pref14">Country</label>
+						<input type="checkbox" id="pref14">
+						<label for="pref15">Folk</label>
+						<input type="checkbox" id="pref15">
+
+						<label for="pref16">Kids and Family</label>
+						<input type="checkbox" id="pref16">
+						<label for="pref17">Jazz</label>
+						<input type="checkbox" id="pref17">
+						<label for="pref18">Metal</label>
+						<input type="checkbox" id="pref18">
+						<label for="pref19">Health/fitness</label>
+						<input type="checkbox" id="pref19">
+					</div>
+
+					<div class="form-element">
+						<button>Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<template id="media-item">
 			<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"

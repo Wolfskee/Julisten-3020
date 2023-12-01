@@ -40,18 +40,14 @@
     height: 50px;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 #droppable {
     border: 3px dashed #8b8b8b;
     color: #fff;
-    height: 620px;
+    height: 670px;
     min-width: 300px;
     width: 22%;
     /* position: fixed; */
-     /* right: 1%; */
+    /* right: 1%; */
     top: 72px;
     background-color: #151515;
     overflow-y: auto; /* Make the container vertically scrollable if content exceeds its height */
