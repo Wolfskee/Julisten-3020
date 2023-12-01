@@ -7,6 +7,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   display: none;
+  position: fixed;
+  top: 852px;
+  z-index: 2;
 }
 
 .player-album{
@@ -14,26 +17,33 @@
   height: auto;
 }
 
+.albumPicContainer{
+  margin-left: 10px;
+}
+
 .player-info {
   margin-bottom: auto;
 }
 
 .song-title {
+  margin-left: 10px;
   font-size: 20px;
-  color: #ffffff;
+  color: darksalmon;
 }
 
 .artist-name {
+  margin-left: 10px;
   font-size: 15px;
   color: #ffffff;
-  margin-left: 75px;
 }
 
 .blenderBtn{
-  margin-left: 5px;
+  margin-left: 94px;
+  position: relative;
 }
 .blender{
-  width: 20px;
+  background: transparent;
+  width: 30px;
   height: auto;
 }
 
@@ -63,7 +73,7 @@
 
 .buttonInPlayer {
   display: flex;
-   gap: 90px; /* Adjust as needed */
+   gap: 80px; /* Adjust as needed */
 }
 
 .controlbuttons {

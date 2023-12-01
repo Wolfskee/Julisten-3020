@@ -56,7 +56,7 @@
 					</button>
 					<button type="submit" id="logoutBtn">Sign out</button>
 				</div>
-				
+
 			</div>
 		</div>
 	</header>
@@ -1013,6 +1013,7 @@
 
 
 	<div class="right">
+		<div id="dragAndDropBoder" class="droppableBorder"></div>
 		<div id="droppable" ondrop="drop(event, null, null, null)" ondragover="allowDrop(event)">
 			<div id="dropHereText" class="emptyQueueText">
 				<p>Drop Media Here!</p>
@@ -1022,11 +1023,11 @@
 		<!-- player -->
 		<div class="player">
 		  <div class="player-info">
-				<div class="row">
-					<span><img class="player-album" src="src\img\11.jpg" style></img></span>
-			    <span class="song-title">One</span>
-			    <span class="artist-name">Marcel Pequel</span>
-					<span class="blenderBtn"><img class="blender"  src="src\img\profile.png"></img><span>
+				<div class="col">
+					<div class="albumPicContainer"><img class="player-album" src="src\img\11.jpg" style></img></div>
+			    <div class="song-title">One</div>
+			    <div class="artist-name">Marcel Pequel</div>
+					<div class="blenderBtn"><img class="blender" onclick="blender()"  src="src\img\blender.png"></img></div>
 				</div>
 		  </div>
 			<div class="buttonInPlayer">
@@ -1042,8 +1043,8 @@
 				<span class="total-time">01:32</span>
 				</div>
 			</div>
-
 	</div>
+	
 		<div class="overlay" style="display:none">
 			<div class="popup" style="display: none;">
 				<div class="close-btn"> &times;</div>
@@ -1234,6 +1235,7 @@
 		<script src="src\script\socials.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="src\script\search_bar.js"></script>
+		<script src="src\script\blender.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
 
 </body>

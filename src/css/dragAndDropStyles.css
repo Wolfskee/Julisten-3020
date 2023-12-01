@@ -47,26 +47,61 @@
 #droppable {
     border: 3px dashed #8b8b8b;
     color: #fff;
-    height: 620px;
-    min-width: 300px;
-    width: 22%;
-    /* position: fixed; */
+    height: 670px;
+    width: 300px;
+    position: fixed;
      /* right: 1%; */
-    top: 72px;
+    top: 181px;
     background-color: #151515;
     overflow-y: auto; /* Make the container vertically scrollable if content exceeds its height */
     overflow-x: hidden; /* Hide horizontal overflow */
     scrollbar-width: thin;
     scrollbar-color: darkgray lightgray;
     padding-bottom: 250px;
-
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-
-
+    border-radius: 5px;
 
 }
+
+.droppableBorder {
+  border: 3px dashed #8b8b8b;
+  color: #fff;
+  height: 670px;
+  min-width: 300px;
+  width: 22%;
+  position: relative;
+   /* right: 1%; */
+  top: 70px;
+  background-color: #151515;
+  padding-bottom: 250px;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none
+}
+
+.droppableBorder::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  border-radius: 5px; /* 如果需要圆角 */
+  background: linear-gradient(to right,
+    rgba(99, 76, 190, 0.2),
+    rgba(99, 76, 190, 0.6),
+    rgba(253, 64, 42, 0.5),
+    rgba(189, 149, 211, 0.4),
+    rgba(31, 145, 242, 0.4),
+    rgba(36, 226, 198, 0.5),
+    rgba(36, 226, 198, 0.2));
+  margin: -12px; /* 边框的大小 */
+}
+
+
 #dropHereText {
     text-align: center;
 }
