@@ -44,10 +44,17 @@
     border: 3px dashed #8b8b8b;
     color: #fff;
     height: 670px;
+<<<<<<< Updated upstream
     min-width: 250px;
     width: 22%;
     position: fixed;
     right: 1%;
+=======
+    min-width: 300px;
+    width: 22%;
+    /* position: fixed; */
+    /* right: 1%; */
+>>>>>>> Stashed changes
     top: 72px;
     background-color: #151515;
     overflow-y: auto; /* Make the container vertically scrollable if content exceeds its height */
