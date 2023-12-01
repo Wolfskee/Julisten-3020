@@ -23,9 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           hidePopup();
           $('#profile-pic').toggle();
           $('#goose').show();     
-          $('#profileButton').prop('disabled', true);
-          $('.description').toggle();
-          $('#logoutBtn').toggle();    
+          $('#profileButton').prop('disabled', true);     
         } else {
           alert('Please check your credentials!');
         }
@@ -44,20 +42,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         $('.popup .form .form-element button').click(function() {
           signedIn();
         })
-        
-        $('#logoutBtn').click(function(){
-          $('#profile-pic').toggle();
-          $('#goose').hide();     
-          $('#profileButton').prop('disabled', false);
-          $('.description').toggle();
-          $('#logoutBtn').toggle();   
-        });
-      });
-
-      $('.overlay').click(function(event) {
-        if (event.target === this) {
-          hidePopup();
-        }
       });
       
   });
