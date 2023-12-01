@@ -1,4 +1,4 @@
-function onSearch(){
+function onSearch() {
     var searchResults = document.getElementById('search-button-input').value;
     callDisplay = false;
     img1Length = null;
@@ -6,7 +6,7 @@ function onSearch(){
     img3Length = null;
     by = null;
 
-    if (searchResults === "Bohemian Rhapsody"){
+    if (searchResults === "Bohemian Rhapsody") {
         img1 = 'src/img/search-bar-icons/Queen_A_Night_At_The_Opera.png';
         img2 = 'src/img/search-bar-icons/Queen_Jazz.png';
         img3 = 'src/img/search-bar-icons/Queen_The_Game.png';
@@ -18,7 +18,7 @@ function onSearch(){
         img3Length = "3:29";
         by = "Queen";
         callDisplay = true;
-    }else if (searchResults === "Energy106"){
+    } else if (searchResults === "Energy106") {
         img1 = 'src/img/search-bar-icons/Energy106.jpg';
         img2 = 'src/img/search-bar-icons/Virgin103.png';
         img3 = 'src/img/search-bar-icons/CJPB.png';
@@ -26,7 +26,7 @@ function onSearch(){
         img2Name = "Virgin 103.1 live radio";
         img3Name = "CJOB 680 live radio";
         callDisplay = true;
-    }else if (searchResults === "Ted Talk"){
+    } else if (searchResults === "Ted Talk") {
         img1 = 'src/img/search-bar-icons/Ted_Talk_img1.jpg';
         img2 = 'src/img/search-bar-icons/Ted_Talk_img2.jpg';
         img3 = 'src/img/search-bar-icons/Ted_Talk_img3.jpg';
@@ -38,31 +38,32 @@ function onSearch(){
         img3Length = "12:04";
         by = "Ted Talk Daily";
         callDisplay = true;
-    }else{
+    } else {
         insideMain.innerHTML = `
     <div
-        <h1>"${searchResults}" search results: Not Yet implimented.</h1> 
+        <h1>"${searchResults}" search results: Not yet implimented.</h1><br> 
             Try one of the following:
-            "Bohemian Rhapsody"
-            "Ted Talk"
-            "Energy106"
+            <li>"Bohemian Rhapsody"</li>
+            <li>"Ted Talk"</li>
+            <li>"Energy106"</li>
         </div>
     </div>
     
     `;
     }
 
-    if(callDisplay == true){
+    if (callDisplay == true) {
         display(searchResults);
     }
 }
 
 
-function display(searchResults){
-    if (img1Length === null){
+function display(searchResults) {
+    if (img1Length === null) {
         insideMain.innerHTML = `
         <div
-            <h1 class="search-header"> ${searchResults} search results:</h1> 
+            <h1 class="search-header"> "${searchResults}" search results:</h1> 
+            <br>
             <div class="media">
                 <img src="${img1}"  class="mr-3 album-art">
                 <div class="media-body">
@@ -71,10 +72,7 @@ function display(searchResults){
             </div>
         </div>
         <div
-            <h1 style="margin-bottom-20;"> Other media you may like based on your search result:</h1> 
-            <div 
-            <h1> ------------------------------------------------------------------------- </h1>
-            </div>
+            <h1 style="margin-bottom:20px;"> Other media you may like based on your search result:</h1> 
             <div class="media">
                 <img src="${img2}"  class="mr-3 album-art">
                 <div class="media-body">
@@ -82,9 +80,7 @@ function display(searchResults){
                 </div>
             </div>
         </div>
-        <div 
-        <h1> ------------------------------------------------------------------------- </h1>
-        </div>
+        <br>
         <div 
             <div class="media">
                 <img src="${img3}"  class="mr-3 album-art">
@@ -95,9 +91,9 @@ function display(searchResults){
         </div>
         
         `;
- 
-    }else{
-    insideMain.innerHTML = `
+
+    } else {
+        insideMain.innerHTML = `
     <div
         <h1 class="search-header"> ${searchResults} search results:</h1> 
         <div class="media">
@@ -110,10 +106,7 @@ function display(searchResults){
 	    </div>
     </div>
     <div
-        <h1 style="margin-bottom-20;"> Other media you may like based on your search result:</h1> 
-            <div 
-            <h1> ------------------------------------------------------------------------- </h1>
-            </div>
+        <h1 style="margin-bottom:20px;"> Other media you may like based on your search result:</h1> 
             <div class="media">
                 <img src="${img2}"  class="mr-3 album-art">
                 <div class="media-body">
@@ -123,9 +116,7 @@ function display(searchResults){
                 </div>
             </div>
         </div>
-        <div 
-        <h1> ------------------------------------------------------------------------- </h1>
-        </div>
+        <br>
         <div 
             <div class="media">
                 <img src="${img3}"  class="mr-3 album-art">
