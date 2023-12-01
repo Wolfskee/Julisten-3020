@@ -35,6 +35,43 @@
     white-space: nowrap;
 }
 
+.genre-inner {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%, -50%);
+    width: 500px;
+    height: 250px;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px 5px rgb(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+/* .genre-inner h2 {
+    text-align: center;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+} */
+
+.genre-outer {
+    display: none;
+    position: fixed;
+    /* Fixed positioning relative to the viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Semi-transparent black background */
+}
+
 .item-pic {
     width: 50px;
     height: 50px;
