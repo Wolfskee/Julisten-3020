@@ -15,7 +15,8 @@ div.right {
   /* This sets the distance from the right edge */
   margin-top: 110px;
   position: fixed;
-  overflow-y: auto; /* Make the container vertically scrollable if content exceeds its height */
+  overflow-y: auto;
+  /* Make the container vertically scrollable if content exceeds its height */
   overflow-x: hidden;
 }
 
@@ -74,7 +75,6 @@ main.content {
 }
 
 .search-button {
-  padding: 10px 20px;
   cursor: pointer;
   background-color: #555;
   border: none;
@@ -196,7 +196,7 @@ main.content {
   box-shadow: none;
 }
 
-.login-page #logoutBtn{
+.login-page #logoutBtn {
   display: none;
   visibility: hidden;
   position: absolute;
@@ -205,7 +205,7 @@ main.content {
   border: none;
   outline: none;
   font-size: 15px;
-  background: rgba(0,0,0,0.34);
+  background: rgba(0, 0, 0, 0.34);
   color: #f5f5f5;
   border-radius: 10px;
   cursor: pointer;
@@ -217,7 +217,7 @@ main.content {
   transition: opacity 0.3s;
 }
 
-.login-page:hover #logoutBtn{
+.login-page:hover #logoutBtn {
   visibility: visible;
   opacity: 10;
   text-shadow: none;
@@ -410,6 +410,8 @@ main.content {
 .nav-link {
   transition: transform 0.3s;
   transition: text-shadow 0.3s;
+  width: 33.33%;
+  padding: 8px 0px;
 }
 
 .nav-link:hover {
@@ -423,5 +425,5 @@ main.content {
 }
 
 .search-header {
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }

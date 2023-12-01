@@ -1,4 +1,4 @@
-function onSearch(){
+function onSearch() {
     var searchResults = document.getElementById('search-button-input').value;
     callDisplay = false;
     img1Length = null;
@@ -6,7 +6,7 @@ function onSearch(){
     img3Length = null;
     by = null;
 
-    if (searchResults === "Bohemian Rhapsody"){
+    if (searchResults === "Bohemian Rhapsody") {
         img1 = 'src/img/search-bar-icons/Queen_A_Night_At_The_Opera.png';
         img2 = 'src/img/search-bar-icons/Queen_Jazz.png';
         img3 = 'src/img/search-bar-icons/Queen_The_Game.png';
@@ -18,7 +18,7 @@ function onSearch(){
         img3Length = "3:29";
         by = "Queen";
         callDisplay = true;
-    }else if (searchResults === "Energy106"){
+    } else if (searchResults === "Energy106") {
         img1 = 'src/img/search-bar-icons/Energy106.jpg';
         img2 = 'src/img/search-bar-icons/Virgin103.png';
         img3 = 'src/img/search-bar-icons/CJPB.png';
@@ -26,7 +26,7 @@ function onSearch(){
         img2Name = "Virgin 103.1 live radio";
         img3Name = "CJOB 680 live radio";
         callDisplay = true;
-    }else if (searchResults === "Ted Talk"){
+    } else if (searchResults === "Ted Talk") {
         img1 = 'src/img/search-bar-icons/Ted_Talk_img1.jpg';
         img2 = 'src/img/search-bar-icons/Ted_Talk_img2.jpg';
         img3 = 'src/img/search-bar-icons/Ted_Talk_img3.jpg';
@@ -38,7 +38,7 @@ function onSearch(){
         img3Length = "12:04";
         by = "Ted Talk Daily";
         callDisplay = true;
-    }else{
+    } else {
         insideMain.innerHTML = `
     <div
         <h1>"${searchResults}" search results: Not Yet implimented.</h1>
@@ -52,14 +52,14 @@ function onSearch(){
     `;
     }
 
-    if(callDisplay == true){
+    if (callDisplay == true) {
         display(searchResults);
     }
 }
 
 
-function display(searchResults){
-        insideMain.innerHTML = `
+function display(searchResults) {
+    insideMain.innerHTML = `
         <button class="btn btn-secondary search-button backbutton" onclick="returnHome()"><h2>&larr;</h2></button>
         <h3 class="search-header"> ${searchResults} search results:</h3>
         <div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
@@ -135,7 +135,7 @@ function display(searchResults){
     </div>
 </div>
         `;
- }
+}
 
 const searchButtonInput = document.getElementById('search-button-input');
 searchButtonInput.addEventListener('keyup', function (event) {
