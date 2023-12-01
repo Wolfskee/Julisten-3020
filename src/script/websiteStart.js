@@ -18,6 +18,8 @@ gsap.from("header", {
 
 
 var tl = gsap.timeline({ repeat: -1, yoyo: true });
+var t2 = gsap.timeline({ repeat: -1, yoyo: true });
+var t3 = gsap.timeline({ repeat: -1, yoyo: true });
 
 tl.to("#droppable", {
     duration: 4,
@@ -29,6 +31,42 @@ tl.to("#droppable", {
 });
 
 tl.to("#droppable", {
+    duration: 4,
+    y: "0px",
+    scale: 1,
+    rotationX: 0,
+    rotationY: 0,
+    ease: "power1.inOut"
+});
+
+t2.to(".droppableBorder", {
+    duration: 4,
+    y: "-20px",
+    scale: 0.9,
+    rotationX: 10,
+    rotationY: 5,
+    ease: "power1.inOut"
+});
+
+t2.to(".droppableBorder", {
+    duration: 4,
+    y: "0px",
+    scale: 1,
+    rotationX: 0,
+    rotationY: 0,
+    ease: "power1.inOut"
+});
+
+t3.to(".player", {
+    duration: 4,
+    y: "-20px",
+    scale: 0.9,
+    rotationX: 10,
+    rotationY: 5,
+    ease: "power1.inOut"
+});
+
+t3.to(".player", {
     duration: 4,
     y: "0px",
     scale: 1,
@@ -82,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       albumCover = mutation.target.childNodes[3].childNodes[1].querySelector('img').src;
 
                       albumSongName = mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[0];
-                      albumArtist = mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[1].split("Add")[0];
+                      albumArtist = mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[1].split("Add")[0].replace(/[\r\n\t]/g, '');
                       playerAlbum = playerElement.childNodes[1].childNodes[1].childNodes[0];
                       //console.log(mutation.target.childNodes[3].childNodes[1].childNodes[1].textContent.split("Artist: ")[1].split("Add")[0]);
                       playerSongAlbumCover = playerElement.childNodes[1].childNodes[1].childNodes[1].querySelector('img');
