@@ -408,8 +408,6 @@ main.content {
 .nav-link {
   transition: transform 0.3s;
   transition: text-shadow 0.3s;
-  width: 33.33%;
-  padding: 8px 0px;
 }
 
 .nav-link:hover {
