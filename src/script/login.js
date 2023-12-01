@@ -53,6 +53,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
           $('#logoutBtn').toggle();   
         });
       });
+
+      $('.overlay').click(function(event) {
+        if (event.target === this) {
+          hidePopup();
+        }
+      });
       
   });
 
