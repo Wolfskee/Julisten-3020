@@ -41,14 +41,14 @@ function onSearch(){
     }else{
         insideMain.innerHTML = `
     <div
-        <h1>"${searchResults}" search results: Not Yet implimented.</h1> 
+        <h1>"${searchResults}" search results: Not Yet implimented.</h1>
             Try one of the following:
             "Bohemian Rhapsody"
             "Ted Talk"
             "Energy106"
         </div>
     </div>
-    
+
     `;
     }
 
@@ -59,87 +59,83 @@ function onSearch(){
 
 
 function display(searchResults){
-    if (img1Length === null){
         insideMain.innerHTML = `
-        <div
-            <h1 class="search-header"> ${searchResults} search results:</h1> 
-            <div class="media">
-                <img src="${img1}"  class="mr-3 album-art">
-                <div class="media-body">
-                    <h5 class="mt-0">${img1Name}</h5>
+        <button class="btn btn-secondary search-button backbutton" onclick="returnHome()"><h2>&larr;</h2></button>
+        <h3 class="search-header"> ${searchResults} search results:</h3>
+        <div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
+            <img src=${img1} class="mr-3 item-pic" draggable="false" alt="Lullaby">
+            <div class="media-body">
+                <div class="media-info">
+                        <span style="font-size:1.05rem">${img1Name}</span><br>
+                        <span style="font-size:0.9rem">Artist: ${by}</span><br>
+                    </div>
+                <button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+                    <icon>
+                        <img src="src/img/plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+                    </icon>
+                    <span class="tooltip-text">Add song to Queue</span>
+                </button>
+                <!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
+                    <u>More Info</u></a> -->
+                <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+                    <icon>
+                        <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+                    </icon>
+                    <span class="tooltip-text"><span>More info</span></span>
+                </button>
+            </div>
+        </div>
+        <h3 class="search-header-other">Other media you may enjoy based on search result:</h3>
+        <div class="media-grid">
+        <div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
+        <img src=${img2} class="mr-3 item-pic" draggable="false" alt="Lullaby">
+        <div class="media-body">
+            <div class="media-info">
+                    <span style="font-size:1.05rem">${img2Name}</span><br>
+                    <span style="font-size:0.9rem">Artist: ${by}</span><br>
                 </div>
-            </div>
+            <button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+                <icon>
+                    <img src="src/img/plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+                </icon>
+                <span class="tooltip-text">Add song to Queue</span>
+            </button>
+            <!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
+                <u>More Info</u></a> -->
+            <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+                <icon>
+                    <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+                </icon>
+                <span class="tooltip-text"><span>More info</span></span>
+            </button>
         </div>
-        <div
-            <h1 style="margin-bottom-20;"> Other media you may like based on your search result:</h1> 
-            <div 
-            <h1> ------------------------------------------------------------------------- </h1>
-            </div>
-            <div class="media">
-                <img src="${img2}"  class="mr-3 album-art">
-                <div class="media-body">
-                    <h5 class="mt-0">${img2Name}</h5>
-                </div>
-            </div>
-        </div>
-        <div 
-        <h1> ------------------------------------------------------------------------- </h1>
-        </div>
-        <div 
-            <div class="media">
-                <img src="${img3}"  class="mr-3 album-art">
-                <div class="media-body">
-                    <h5 class="mt-0">${img3Name}</h5>
-                </div>
-            </div>
-        </div>
-        
-        `;
- 
-    }else{
-    insideMain.innerHTML = `
-    <div
-        <h1 class="search-header"> ${searchResults} search results:</h1> 
-        <div class="media">
-			<img src="${img1}"  class="mr-3 album-art">
-			<div class="media-body">
-				<h5 class="mt-0">${img1Name}</h5>
-                <div>${img1Length}</div>
-                <div>${by}</div>
-            </div>
-	    </div>
     </div>
-    <div
-        <h1 style="margin-bottom-20;"> Other media you may like based on your search result:</h1> 
-            <div 
-            <h1> ------------------------------------------------------------------------- </h1>
-            </div>
-            <div class="media">
-                <img src="${img2}"  class="mr-3 album-art">
-                <div class="media-body">
-                    <h5 class="mt-0">${img2Name}</h5>
-                    <div>${img2Length}</div>
-                    <div>${by}</div>
-                </div>
-            </div>
-        </div>
-        <div 
-        <h1> ------------------------------------------------------------------------- </h1>
-        </div>
-        <div 
-            <div class="media">
-                <img src="${img3}"  class="mr-3 album-art">
-                <div class="media-body">
-                    <h5 class="mt-0">${img3Name}</h5>
-                    <div>${img3Length}</div>
-                    <div>${by}</div>
-                </div>
-            </div>
-    </div> 
-    `;
-    }
 
-}
+    <div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
+    <img src=${img3} class="mr-3 item-pic" draggable="false" alt="Lullaby">
+    <div class="media-body">
+        <div class="media-info">
+                <span style="font-size:1.05rem">${img3Name}</span><br>
+                <span style="font-size:0.9rem">Artist: ${by}</span><br>
+            </div>
+        <button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+            <icon>
+                <img src="src/img/plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+            </icon>
+            <span class="tooltip-text">Add song to Queue</span>
+        </button>
+        <!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
+            <u>More Info</u></a> -->
+        <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+            <icon>
+                <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+            </icon>
+            <span class="tooltip-text"><span>More info</span></span>
+        </button>
+    </div>
+</div>
+        `;
+ }
 
 const searchButtonInput = document.getElementById('search-button-input');
 searchButtonInput.addEventListener('keyup', function (event) {
