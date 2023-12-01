@@ -80,7 +80,6 @@
   z-index: 999;
   bottom: -23px;
   left: auto;
-  margin-left: -45px;
   /* Use half of the width value to align the tooltip */
   opacity: 0;
   transition: opacity 0.3s;
