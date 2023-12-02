@@ -117,7 +117,10 @@ function moreInfo_callFromQueue(element){
   var mainPage = document.getElementById("main-container");
   var info;
 
-  homePageHTML = mainPage.innerHTML;
+  //homePageHTML = mainPage.innerHTML;
+  if (!homePageHTML) {
+    homePageHTML = mainPage.innerHTML;
+  }
 
   // console.log(homePageHTML);
   //
