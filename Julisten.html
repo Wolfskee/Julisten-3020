@@ -14,8 +14,8 @@
 	<link rel="stylesheet" href="src/css/registration.css">
 	<link rel="stylesheet" href="src/css/socials.css">
 	<link rel="icon" href="src/img/JULIISN_header.png" type="image/png">
-  <link rel="stylesheet" href="src/css/socials.css">
 	<link rel="stylesheet" href="src/css/player.css">
+	<link rel="stylesheet" href="src/css/library.css">
 </head>
 
 <body>
@@ -31,14 +31,15 @@
 				</div>
 				<div class="col">
 					<nav class="nav justify-content-end">
-						<a id="songs-link" href="#" class="nav-link text-white">Songs</a>
-						<a id="podcasts-link" href="#" class="nav-link text-white">Podcasts</a>
-						<a id="radio-link" href="#" class="nav-link text-white">Radio</a>
+						<a id="songs-link" href="#songs" class="nav-link text-white">Songs</a>
+						<a id="podcasts-link" href="#podcasts" class="nav-link text-white">Podcasts</a>
+						<a id="radio-link" href="#radio" class="nav-link text-white">Radio</a>
 					</nav>
 				</div>
 				<div class="col-auto">
 					<div class="search-container">
-						<input id="search-button-input" type="text" placeholder="Search" class="form-control search-input">
+						<input id="search-button-input" type="text" placeholder="Search"
+							class="form-control search-input">
 						<button id="search-button" class="btn btn-secondary search-button">Search</button>
 					</div>
 				</div>
@@ -71,27 +72,30 @@
 						<div class="carousel-item active">
 							<div class="row">
 								<div class="col">
-									<div class="media" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
+									<div class="media" draggable="true" ondragstart="mediaItemDragStart(event)"
+										ondragend="handleDragEnd(event)">
 										<img src="src\img\UsandThem.jpg" alt="Us and Them Album Cover"
 											class="mr-3 album-art">
 										<div class="media-info">
 											<h5 class="mt-0">Us and Them</h5>
 											<div>by Pink Floyd</div>
 											<div>7:48</div>
-											<!-- <a href="javascript:void(0);" onclick="moreInfo_SoD(this)" -->
-												<!-- style="color: white"><u>More Info</u></a> -->
-												<button class="add-to-queue-btn" onclick="addButtonHandler_sod(this)" draggable="false">
-													<icon>
-														<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-													</icon>
-													<span class="tooltip-text">Add song to Queue</span>
-												</button>
-												<button class="add-to-queue-btn" onclick="moreInfo_SoD(this)" draggable="false">
-													<icon>
-														<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-													</icon>
-													<span class="tooltip-text"><span>More info</span></span>
-												</button>
+											<button class="add-to-queue-btn" onclick="addButtonHandler_sod(this)"
+												draggable="false">
+												<icon>
+													<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+														style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+												</icon>
+												<span class="tooltip-text">Add song to Queue</span>
+											</button>
+											<button class="add-to-queue-btn" onclick="moreInfo_SoD(this)"
+												draggable="false">
+												<icon>
+													<img src="src\img\info-icon.svg" alt="More info"
+														style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+												</icon>
+												<span class="tooltip-text"><span>More info</span></span>
+											</button>
 										</div>
 									</div>
 								</div>
@@ -100,23 +104,26 @@
 						<div class="carousel-item">
 							<div class="row">
 								<div class="col">
-									<div class="media" draggable="true" ondragend="drop(null, GEM, "'11'","src\img\11.jpg")">
+									<div class="media" draggable="true"
+										ondragend="drop(null, GEM, '11','src/img/11.jpg')">
 										<img src="src\img\11.jpg" alt="11 Cover" class="mr-3 album-art">
 										<div class="media-info">
 											<h5 class="mt-0">11</h5>
 											<div>by GEM</div>
 											<div>3:48</div>
-											<!-- <a href="javascript:void(0);" onclick="moreInfo_SoD(this)" -->
-												<!-- style="color: white"><u>More Info</u></a> -->
-											<button class="add-to-queue-btn" onclick="addButtonHandler_sod(this)" draggable="false">
+											<button class="add-to-queue-btn" onclick="addButtonHandler_sod(this)"
+												draggable="false">
 												<icon>
-													<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+													<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+														style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
 												</icon>
 												<span class="tooltip-text">Add song to Queue</span>
 											</button>
-											<button class="add-to-queue-btn" onclick="moreInfo_SoD(this)" draggable="false">
+											<button class="add-to-queue-btn" onclick="moreInfo_SoD(this)"
+												draggable="false">
 												<icon>
-													<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+													<img src="src\img\info-icon.svg" alt="More info"
+														style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
 												</icon>
 												<span class="tooltip-text"><span>More info</span></span>
 											</button>
@@ -143,845 +150,905 @@
 			<div class="container-fluid" length: 500px>
 				<div class="row">
 					<!-- recommend part -->
-					<main class="col-lg-9">
-						<section class="recommended mt-3">
-							<div class="type-head">
-								<span id="genre-name" class="h2">Recommend Songs</span>
-								<span class="line"></span>
-								<button class="btn btn-secondary more-btn">more &gt;</button>
-							</div>
-							<div class="media-grid">
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/HH.png" class="mr-3 item-pic" draggable="false" alt="Lullaby">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Lullaby</span><br>
-												<span style="font-size:0.9rem">Artist: Randy Linda Amber</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
+					<section class="recommended mt-3">
+						<div class="type-head">
+							<span id="genre-name" class="h2">Recommend Songs</span>
+						</div>
+						<div class="media-grid">
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/HH.png" class="mr-3 item-pic" draggable="false"
+									alt="Lullaby">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Lullaby</span><br>
+										<span style="font-size:0.9rem">Artist: Randy Linda Amber</span><br>
 									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/OO.png" class="mr-3 item-pic" draggable="false" alt="Enigma">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Enigma</span><br>
-												<span style="font-size:0.9rem">Artist: Gerald Judy Gerald</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/OO.png" class="mr-3 item-pic" draggable="false" alt="Radiance Echo">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Radiance Echo</span><br>
-												<span style="font-size:0.9rem">Artist: Ralph</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/RR.png" class="mr-3 item-pic" draggable="false" alt="Moonlight Sanctuary Serenade">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Moonlight Sanctuary Serenade</span><br>
-												<span style="font-size:0.9rem">Artist: Ann</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/NN.png" class="mr-3 item-pic" draggable="false" alt="Radiance Reverie Echo">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Radiance Reverie Echo</span><br>
-												<span style="font-size:0.9rem">Artist: Ashley Paul</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/A.png" class="mr-3 item-pic" draggable="false" alt="Sanctuary Aurora Eternity">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Sanctuary Aurora Eternity</span><br>
-												<span style="font-size:0.9rem">Artist: Amber Joseph Amber</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/X.png" class="mr-3 item-pic" draggable="false" alt="Serenade">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Serenade</span><br>
-												<span style="font-size:0.9rem">Artist: Ralph</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/SS.png" class="mr-3 item-pic" draggable="false" alt="Velvet Reverie">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Velvet Reverie</span><br>
-												<span style="font-size:0.9rem">Artist: Randy Gerald</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/QQ.png" class="mr-3 item-pic" draggable="false" alt="Mirage Ember Serenade">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Mirage Ember Serenade</span><br>
-												<span style="font-size:0.9rem">Artist: Gerald Gerald</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/O.png" class="mr-3 item-pic" draggable="false" alt="Solitude Mirage">
-									<div class="media-body">
-										<div class="media-info">
-												<span style="font-size:1.05rem">Solitude Mirage</span><br>
-												<span style="font-size:0.9rem">Artist: Gerald</span><br>
-											</div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="type-head">
-								<span id="genre-name" class="h2">Recommend Radios</span>
-								<span class="line"></span>
-								<button class="btn btn-secondary more-btn">more &gt;</button>
-							</div>
-							<div class="media-grid">
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/TT.png" class="mr-3 item-pic" draggable="false" alt="Vibrato Vignettes">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Vibrato Vignettes</span><br>
-					              <span style="font-size:0.9rem">Artist: Ashley Randy</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/H.png" class="mr-3 item-pic" draggable="false" alt="Melodic Journeys">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Melodic Journeys</span><br>
-					              <span style="font-size:0.9rem">Artist: Randy Barbara</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/I.png" class="mr-3 item-pic" draggable="false" alt="Vibrato Vignettes">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Vibrato Vignettes</span><br>
-					              <span style="font-size:0.9rem">Artist: Marilyn</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/O.png" class="mr-3 item-pic" draggable="false" alt="Whispered Waves">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Whispered Waves</span><br>
-					              <span style="font-size:0.9rem">Artist: Eugene Gerald</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/FF.png" class="mr-3 item-pic" draggable="false" alt="Ambient Adventures">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Ambient Adventures</span><br>
-					              <span style="font-size:0.9rem">Artist: Ann Eugene</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/W.png" class="mr-3 item-pic" draggable="false" alt="Frequencies Unveiled">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Frequencies Unveiled</span><br>
-					              <span style="font-size:0.9rem">Artist: Paul</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/A.png" class="mr-3 item-pic" draggable="false" alt="Lyrical Luminescence">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Lyrical Luminescence</span><br>
-					              <span style="font-size:0.9rem">Artist: Ralph Willie Ralph</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/HH.png" class="mr-3 item-pic" draggable="false" alt="Sonorous Stories">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Sonorous Stories</span><br>
-					              <span style="font-size:0.9rem">Artist: Ashley</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/TT.png" class="mr-3 item-pic" draggable="false" alt="Ethereal Episodes">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Ethereal Episodes</span><br>
-					              <span style="font-size:0.9rem">Artist: Paul</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/BB.png" class="mr-3 item-pic" draggable="false" alt="Radiant Rhythms">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Radiant Rhythms</span><br>
-					              <span style="font-size:0.9rem">Artist: Willie Joseph</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/BB.png" class="mr-3 item-pic" draggable="false" alt="Enchanted Echoes">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Enchanted Echoes</span><br>
-					              <span style="font-size:0.9rem">Artist: Ashley Paul</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/PP.png" class="mr-3 item-pic" draggable="false" alt="Vibrant Voyages">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Vibrant Voyages</span><br>
-					              <span style="font-size:0.9rem">Artist: Barbara Ashley</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="type-head">
-								<span id="genre-name" class="h2">Recommend Podcasts</span>
-								<span class="line"></span>
-								<button class="btn btn-secondary more-btn">more &gt;</button>
-							</div>
-							<div class="media-grid">
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/SS.png" class="mr-3 item-pic" draggable="false" alt="Celestial Cadence">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Celestial Cadence</span><br>
-					              <span style="font-size:0.9rem">Artist: Judy Amber</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/F.png" class="mr-3 item-pic" draggable="false" alt="Audio Escapade">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Audio Escapade</span><br>
-					              <span style="font-size:0.9rem">Artist: Gerald Willie</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/M.png" class="mr-3 item-pic" draggable="false" alt="Rhythmic Reflections">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Rhythmic Reflections</span><br>
-					              <span style="font-size:0.9rem">Artist: Linda</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/X.png" class="mr-3 item-pic" draggable="false" alt="Harmonic Horizons">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Harmonic Horizons</span><br>
-					              <span style="font-size:0.9rem">Artist: Judy Randy</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/TT.png" class="mr-3 item-pic" draggable="false" alt="Melodic Journeys">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Melodic Journeys</span><br>
-					              <span style="font-size:0.9rem">Artist: Ashley Paul Ralph</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/DD.png" class="mr-3 item-pic" draggable="false" alt="Melodic Journeys">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Melodic Journeys</span><br>
-					              <span style="font-size:0.9rem">Artist: Gerald Paul</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/X.png" class="mr-3 item-pic" draggable="false" alt="Ethereal Episodes">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Ethereal Episodes</span><br>
-					              <span style="font-size:0.9rem">Artist: Paul Gerald</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/X.png" class="mr-3 item-pic" draggable="false" alt="Enchanted Echoes">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Enchanted Echoes</span><br>
-					              <span style="font-size:0.9rem">Artist: Marilyn Randy Bruce</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/RR.png" class="mr-3 item-pic" draggable="false" alt="Enchanted Echoes">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Enchanted Echoes</span><br>
-					              <span style="font-size:0.9rem">Artist: Amber</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/EE.png" class="mr-3 item-pic" draggable="false" alt="Frequencies Unveiled">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Frequencies Unveiled</span><br>
-					              <span style="font-size:0.9rem">Artist: Judy</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/OO.png" class="mr-3 item-pic" draggable="false" alt="Ambient Adventures">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Ambient Adventures</span><br>
-					              <span style="font-size:0.9rem">Artist: Ashley Joseph Marilyn</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
-								</div>
-
-								<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
-									<img src="src/img/media-icons/TT.png" class="mr-3 item-pic" draggable="false" alt="Echoed Emotions">
-									<div class="media-body">
-										<div class="media-info">
-					              <span style="font-size:1.05rem">Echoed Emotions</span><br>
-					              <span style="font-size:0.9rem">Artist: Joseph</span><br>
-					            </div>
-										<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
-											<icon>
-												<img src="src\img\plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-											</icon>
-											<span class="tooltip-text">Add song to Queue</span>
-										</button>
-										<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-											<u>More Info</u></a> -->
-										<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
-											<icon>
-												<img src="src\img\info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-											</icon>
-											<span class="tooltip-text"><span>More info</span></span>
-										</button>
-									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
 								</div>
 							</div>
 
-						</section>
-					</main>
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/OO.png" class="mr-3 item-pic" draggable="false"
+									alt="Enigma">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Enigma</span><br>
+										<span style="font-size:0.9rem">Artist: Gerald Judy Gerald</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/OO.png" class="mr-3 item-pic" draggable="false"
+									alt="Radiance Echo">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Radiance Echo</span><br>
+										<span style="font-size:0.9rem">Artist: Ralph</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/RR.png" class="mr-3 item-pic" draggable="false"
+									alt="Moonlight Sanctuary Serenade">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Moonlight Sanctuary Serenade</span><br>
+										<span style="font-size:0.9rem">Artist: Ann</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/NN.png" class="mr-3 item-pic" draggable="false"
+									alt="Radiance Reverie Echo">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Radiance Reverie Echo</span><br>
+										<span style="font-size:0.9rem">Artist: Ashley Paul</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/A.png" class="mr-3 item-pic" draggable="false"
+									alt="Sanctuary Aurora Eternity">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Sanctuary Aurora Eternity</span><br>
+										<span style="font-size:0.9rem">Artist: Amber Joseph Amber</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/X.png" class="mr-3 item-pic" draggable="false"
+									alt="Serenade">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Serenade</span><br>
+										<span style="font-size:0.9rem">Artist: Ralph</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/SS.png" class="mr-3 item-pic" draggable="false"
+									alt="Velvet Reverie">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Velvet Reverie</span><br>
+										<span style="font-size:0.9rem">Artist: Randy Gerald</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/QQ.png" class="mr-3 item-pic" draggable="false"
+									alt="Mirage Ember Serenade">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Mirage Ember Serenade</span><br>
+										<span style="font-size:0.9rem">Artist: Gerald Gerald</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/O.png" class="mr-3 item-pic" draggable="false"
+									alt="Solitude Mirage">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Solitude Mirage</span><br>
+										<span style="font-size:0.9rem">Artist: Gerald</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="type-head">
+							<span id="genre-name" class="h2">Recommend Radios</span>
+						</div>
+						<div class="media-grid">
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/TT.png" class="mr-3 item-pic" draggable="false"
+									alt="Vibrato Vignettes">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Vibrato Vignettes</span><br>
+										<span style="font-size:0.9rem">Artist: Ashley Randy</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/H.png" class="mr-3 item-pic" draggable="false"
+									alt="Melodic Journeys">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Melodic Journeys</span><br>
+										<span style="font-size:0.9rem">Artist: Randy Barbara</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/I.png" class="mr-3 item-pic" draggable="false"
+									alt="Vibrato Vignettes">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Vibrato Vignettes</span><br>
+										<span style="font-size:0.9rem">Artist: Marilyn</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/O.png" class="mr-3 item-pic" draggable="false"
+									alt="Whispered Waves">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Whispered Waves</span><br>
+										<span style="font-size:0.9rem">Artist: Eugene Gerald</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/FF.png" class="mr-3 item-pic" draggable="false"
+									alt="Ambient Adventures">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Ambient Adventures</span><br>
+										<span style="font-size:0.9rem">Artist: Ann Eugene</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/W.png" class="mr-3 item-pic" draggable="false"
+									alt="Frequencies Unveiled">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Frequencies Unveiled</span><br>
+										<span style="font-size:0.9rem">Artist: Paul</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/A.png" class="mr-3 item-pic" draggable="false"
+									alt="Lyrical Luminescence">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Lyrical Luminescence</span><br>
+										<span style="font-size:0.9rem">Artist: Ralph Willie Ralph</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/HH.png" class="mr-3 item-pic" draggable="false"
+									alt="Sonorous Stories">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Sonorous Stories</span><br>
+										<span style="font-size:0.9rem">Artist: Ashley</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/TT.png" class="mr-3 item-pic" draggable="false"
+									alt="Ethereal Episodes">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Ethereal Episodes</span><br>
+										<span style="font-size:0.9rem">Artist: Paul</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/BB.png" class="mr-3 item-pic" draggable="false"
+									alt="Radiant Rhythms">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Radiant Rhythms</span><br>
+										<span style="font-size:0.9rem">Artist: Willie Joseph</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/BB.png" class="mr-3 item-pic" draggable="false"
+									alt="Enchanted Echoes">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Enchanted Echoes</span><br>
+										<span style="font-size:0.9rem">Artist: Ashley Paul</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/PP.png" class="mr-3 item-pic" draggable="false"
+									alt="Vibrant Voyages">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Vibrant Voyages</span><br>
+										<span style="font-size:0.9rem">Artist: Barbara Ashley</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="type-head">
+							<span id="genre-name" class="h2">Recommend Podcasts</span>
+						</div>
+						<div class="media-grid">
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/SS.png" class="mr-3 item-pic" draggable="false"
+									alt="Celestial Cadence">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Celestial Cadence</span><br>
+										<span style="font-size:0.9rem">Artist: Judy Amber</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/F.png" class="mr-3 item-pic" draggable="false"
+									alt="Audio Escapade">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Audio Escapade</span><br>
+										<span style="font-size:0.9rem">Artist: Gerald Willie</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/M.png" class="mr-3 item-pic" draggable="false"
+									alt="Rhythmic Reflections">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Rhythmic Reflections</span><br>
+										<span style="font-size:0.9rem">Artist: Linda</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/X.png" class="mr-3 item-pic" draggable="false"
+									alt="Harmonic Horizons">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Harmonic Horizons</span><br>
+										<span style="font-size:0.9rem">Artist: Judy Randy</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/TT.png" class="mr-3 item-pic" draggable="false"
+									alt="Melodic Journeys">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Melodic Journeys</span><br>
+										<span style="font-size:0.9rem">Artist: Ashley Paul Ralph</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/DD.png" class="mr-3 item-pic" draggable="false"
+									alt="Melodic Journeys">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Melodic Journeys</span><br>
+										<span style="font-size:0.9rem">Artist: Gerald Paul</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/X.png" class="mr-3 item-pic" draggable="false"
+									alt="Ethereal Episodes">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Ethereal Episodes</span><br>
+										<span style="font-size:0.9rem">Artist: Paul Gerald</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/X.png" class="mr-3 item-pic" draggable="false"
+									alt="Enchanted Echoes">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Enchanted Echoes</span><br>
+										<span style="font-size:0.9rem">Artist: Marilyn Randy Bruce</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/RR.png" class="mr-3 item-pic" draggable="false"
+									alt="Enchanted Echoes">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Enchanted Echoes</span><br>
+										<span style="font-size:0.9rem">Artist: Amber</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/EE.png" class="mr-3 item-pic" draggable="false"
+									alt="Frequencies Unveiled">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Frequencies Unveiled</span><br>
+										<span style="font-size:0.9rem">Artist: Judy</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/OO.png" class="mr-3 item-pic" draggable="false"
+									alt="Ambient Adventures">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Ambient Adventures</span><br>
+										<span style="font-size:0.9rem">Artist: Ashley Joseph Marilyn</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+
+							<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+								ondragend="handleDragEnd(event)">
+								<img src="src/img/media-icons/TT.png" class="mr-3 item-pic" draggable="false"
+									alt="Echoed Emotions">
+								<div class="media-body">
+									<div class="media-info">
+										<span style="font-size:1.05rem">Echoed Emotions</span><br>
+										<span style="font-size:0.9rem">Artist: Joseph</span><br>
+									</div>
+									<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable="false">
+										<icon>
+											<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+												style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+										</icon>
+										<span class="tooltip-text">Add song to Queue</span>
+									</button>
+									<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
+										<icon>
+											<img src="src\img\info-icon.svg" alt="More info"
+												style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+										</icon>
+										<span class="tooltip-text"><span>More info</span></span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+					</section>
 				</div>
 			</div>
 		</div>
@@ -989,12 +1056,15 @@
 		<div class="socials-side">
 			<label for="check">
 				<span class="fas fa-times" id="times"></span>
-				<span class="fas fa-bars" id="bars" ></span>
+				<span class="fas fa-bars" id="bars"></span>
 			</label>
 			<div class="head">Room</div>
 			<ul>
 				<li>
 					Khaled
+				</li>
+				<li>
+					Hien
 				</li>
 				<li>
 					Breanna
@@ -1009,9 +1079,14 @@
 			</ul>
 		</div>
 
+		<div class="genre-outer">
+			<div class="genre-inner">
+				<div class="close-btn" onclick="hideGenre()">&times</div>
+				<div id="genre-inner"></div>
+			</div>
+		</div>
+
 	</main>
-
-
 	<div class="right">
 		<div id="dragAndDropBoder" class="droppableBorder"></div>
 		<div id="droppable" ondrop="drop(event, null, null, null)" ondragover="allowDrop(event)">
@@ -1022,58 +1097,59 @@
 
 		<!-- player -->
 		<div class="player">
-		  <div class="player-info">
+			<div class="player-info">
 				<div class="col">
 					<div class="albumPicContainer"><img class="player-album" src="src\img\11.jpg" style></img></div>
-			    <div class="song-title">One</div>
-			    <div class="artist-name">Marcel Pequel</div>
-					<div class="blenderBtn"><img class="blender" onclick="blender()"  src="src\img\blender.png"></img></div>
-				</div>
-		  </div>
-			<div class="buttonInPlayer">
-		      <button class="controlbuttons" onclick="prevSong()">&#171;</button>
-		      <button class="controlbuttons" onclick="togglePlayPause()">&#9654;</button>
-		      <button class="controlbuttons" onclick="nextSong()">&#187;</button>
-		  </div>
-			<div class="player-controls">
-		    <span class="current-time">00:00</span>
-		    <div class="progress-container" onclick="setSongPosition(this,event)">
-			    <span class="progress-bar"></span>
-				</div>
-				<span class="total-time">01:32</span>
+					<div class="song-title">One</div>
+					<div class="artist-name">Marcel Pequel</div>
+					<div class="blenderBtn"><img class="blender" onclick="blender()" src="src\img\blender.png"></img>
+					</div>
 				</div>
 			</div>
+			<div class="buttonInPlayer">
+				<button class="controlbuttons" onclick="prevSong()">&#171;</button>
+				<button class="controlbuttons" onclick="togglePlayPause()">&#9654;</button>
+				<button class="controlbuttons" onclick="nextSong()">&#187;</button>
+			</div>
+			<div class="player-controls">
+				<span class="current-time">00:00</span>
+				<div class="progress-container" onclick="setSongPosition(this,event)">
+					<span class="progress-bar"></span>
+				</div>
+				<span class="total-time">01:32</span>
+			</div>
+		</div>
 	</div>
-	
-		<div class="overlay" style="display:none">
-			<div class="popup" style="display: none;">
-				<div class="close-btn"> &times;</div>
-				<div class="form">
-					<h2>Log in</h2>
-					<div class="form-element">
-						<label for="email">Email</label>
-						<input type="email" id="email" placeholder="Enter email">
-					</div>
-					<div class="form-element">
-						<label for="password">Password</label>
-						<input type="password" id="password" placeholder="Enter password">
-					</div>
-					<div class="form-element">
-						<input type="checkbox" id="remember-me">
-						<label for="remember-me">Remember me</label>
-					</div>
-					<div class="form-element">
-						<button>Sign in</button>
-					</div>
-					<div class="form-element">
-						<a href="#">Forgot Password ?</a>
-					</div>
-					<div class="form-element" id="new-user">
-						<a href="#"> New to Julisin ?</a>
-					</div>
+
+	<div class="overlay" style="display:none">
+		<div class="popup" style="display: none;">
+			<div class="close-btn"> &times;</div>
+			<div class="form">
+				<h2>Log in</h2>
+				<div class="form-element">
+					<label for="email">Email</label>
+					<input type="email" id="email" placeholder="Enter email">
+				</div>
+				<div class="form-element">
+					<label for="password">Password</label>
+					<input type="password" id="password" placeholder="Enter password">
+				</div>
+				<div class="form-element">
+					<input type="checkbox" id="remember-me">
+					<label for="remember-me">Remember me</label>
+				</div>
+				<div class="form-element">
+					<button>Sign in</button>
+				</div>
+				<div class="form-element">
+					<a href="#">Forgot Password ?</a>
+				</div>
+				<div class="form-element" id="new-user">
+					<a href="#"> New to Julisin ?</a>
 				</div>
 			</div>
 		</div>
+	</div>
 
 
 	<div class="socials-outer">
@@ -1082,6 +1158,15 @@
 			<div class="close-btn">
 				&times
 			</div>
+			<div class="form">
+				<div class="form-element">
+					<input type="text" id="code" placeholder="Enter room code">
+				</div>
+				<!-- 				<div class="form-element"> -->
+				<!-- 					<button>Join Room</button> -->
+				<!-- 				</div> -->
+				<!-- 				<div class="form-element"> -->
+				<!-- 					<a href="#"> Create your own room ?</a> -->
 				<div class="form">
 					<div class="form-element" id="roomCodeTextBar">
 						<input type="text" id="code" placeholder="Enter room code">
@@ -1175,59 +1260,58 @@
 		</div>
 	</div>
 
-		<template id="media-item">
-			<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
-				ondragend="handleDragEnd(event)">
-				<img src="src\img\neko-playing.gif" class="mr-3 item-pic" draggable="false">
-				<div class="media-body">
-					<div class="media-info"></div>
-					<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable=false>
-						<icon>
-							<img src="src\img\plus-icon.svg" alt="Add song to Queue"
-								style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
-						</icon>
-						<span class="tooltip-text">Add song to Queue</span>
-					</button>
-					<!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-						<u>More Info</u></a> -->
-					<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable=false>
-						<icon>
-							<img src="src\img\info-icon.svg" alt="More info"
-								style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
-						</icon>
-						<span class="tooltip-text"><span>More info</span></span>
-					</button>
-				</div>
+	<!-- library elements -->
+	<template id="media-item">
+		<div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)"
+			ondragend="handleDragEnd(event)">
+			<img src="src\img\neko-playing.gif" class="mr-3 item-pic" draggable="false">
+			<div class="media-body">
+				<div class="media-info"></div>
+				<button class="add-to-queue-btn" onclick="addButtonHandler(this)" draggable=false>
+					<icon>
+						<img src="src\img\plus-icon.svg" alt="Add song to Queue"
+							style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
+					</icon>
+
+					<span class="tooltip-text" style="right: 60px;">Add song to Queue</span>
+				</button>
+				<button class="add-to-queue-btn" onclick="moreInfo(this)" draggable=false>
+					<icon>
+						<img src="src\img\info-icon.svg" alt="More info"
+							style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
+					</icon>
+					<span class="tooltip-text" style="right: 35px;"><span>More info</span></span>
+				</button>
 			</div>
-		</template>
+		</div>
+	</template>
 
-		<template id="genre">
-			<div class="type-head">
-				<span id="genre-name" class="h2"></span>
-				<span class="line"></span>
-				<button class="btn btn-secondary more-btn">more ></button>
-			</div>
-		</template>
+	<template id="genre">
+		<div class="type-head">
+			<span id="genre-name" class="h2"></span>
+			<span class="line"></span>
+			<button type="submit" class="btn btn-secondary more-btn" onclick="showGenre(this)">more ></button>
+		</div>
+	</template>
 
-
-		<!-- recommend part -->
-		<!-- carousel effect -->
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-		<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>-->
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-		<script src="src\script\login.js"></script>
-		<script src="src\script\websiteStart.js"></script>
-		<script src="src\script\moreInfo.js"></script>
-		<script src="src\script\library.js"></script>
-		<script src="src\script\dragAndDrop.js"></script>
-		<script src="src\script\registration.js"></script>
-		<script src="src\script\socials.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="src\script\search_bar.js"></script>
-		<script src="src\script\blender.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
+	<!-- recommend part -->
+	<!-- carousel effect -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>-->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+	<script src="src\script\login.js"></script>
+	<script src="src\script\websiteStart.js"></script>
+	<script src="src\script\moreInfo.js"></script>
+	<script src="src\script\library.js"></script>
+	<script src="src\script\dragAndDrop.js"></script>
+	<script src="src\script\registration.js"></script>
+	<script src="src\script\socials.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="src\script\search_bar.js"></script>
+	<script src="src\script\blender.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
 
 </body>
 
