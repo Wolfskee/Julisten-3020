@@ -1,3 +1,27 @@
+var img1 = null;
+var img1Name = null;
+var img1Length = null;
+var img2 = null;
+var img2Name = null;
+var img2Length = null;
+var img3 = null;
+var img3Name = null;
+var img3Length = null;
+var by = null;
+
+const insideMain = document.getElementById('main-container');
+const search_button = document.getElementById('search-button');
+search_button.addEventListener('click', onSearch);
+const homeHTML = document.querySelector('body');
+
+const searchButtonInput = document.getElementById('search-button-input');
+searchButtonInput.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        onSearch();
+    }
+});
+
+
 function onSearch() {
     var searchResults = document.getElementById('search-button-input').value;
     callDisplay = false;
@@ -58,9 +82,10 @@ function onSearch() {
 }
 
 
+
 function display(searchResults) {
     insideMain.innerHTML = `
-        <button class="btn btn-secondary search-button backbutton" onclick="returnHome()"><h2>&larr;</h2></button>
+        <a class="btn btn-secondary search-button backbutton" href="Julisten.html"><h2>&larr;</h2></a>
         <h3> ${searchResults} search results:</h3>
         <div class="media-grid-item search-header" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
             <img src=${img1} class="mr-3 item-pic" draggable="false" alt="Lullaby">
@@ -132,26 +157,3 @@ function display(searchResults) {
 </div>
         `;
 }
-
-const searchButtonInput = document.getElementById('search-button-input');
-searchButtonInput.addEventListener('keyup', function (event) {
-    if (event.key === 'Enter') {
-        onSearch();
-    }
-});
-
-
-var img1 = null;
-var img1Name = null;
-var img1Length = null;
-var img2 = null;
-var img2Name = null;
-var img2Length = null;
-var img3 = null;
-var img3Name = null;
-var img3Length = null;
-var by = null;
-
-const insideMain = document.getElementById('main-container');
-const search_button = document.getElementById('search-button');
-search_button.addEventListener('click', onSearch);
