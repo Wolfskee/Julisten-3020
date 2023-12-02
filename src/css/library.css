@@ -36,14 +36,12 @@
 }
 
 .genre-inner {
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-75%, -80%);
+    transform: translate(-75%, -70%);
     width: 800px;
-    height: 250px;
+    height: 350px;
     padding: 20px 30px;
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 2px 2px 5px 5px rgb(0, 0, 0, 0.15);
@@ -55,7 +53,7 @@
         grid-gap: 0px;
         margin-left: 0px;
         overflow-y: scroll;
-        height: 250px;
+        height: 350px;
         padding-right: 8px;
     }
 
@@ -76,12 +74,6 @@
         border-radius: 24px;
     }
 }
-
-/* .genre-inner h2 {
-    text-align: center;
-    margin: 10px 0px 20px;
-    font-size: 25px;
-} */
 
 .genre-outer {
     display: none;
@@ -153,9 +145,10 @@
     background-color: rgba(12, 6, 52, 0.9);
     border-radius: 10px;
     padding: 10px 15px 10px 15px;
-    transform: translate(-50%, 10px);
     white-space: nowrap;
     align-items: center;
+    position: relative;
+    top: 15px;
 }
 
 .tooltip-text::after {
