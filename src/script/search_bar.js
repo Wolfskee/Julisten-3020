@@ -122,8 +122,6 @@ function display(searchResults) {
             </icon>
             <span class="tooltip-text">Add song to Queue</span>
         </button>
-        <!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-            <u>More Info</u></a> -->
         <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
             <icon>
                 <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
