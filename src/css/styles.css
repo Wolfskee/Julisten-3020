@@ -6,12 +6,11 @@ body {
 
 div.right {
   right: 1%;
-  width: 20%;
+  width: 25%;
   /* Adjusted to take up less width if needed */
   height: 80%;
-  margin-right: 5%;
   /* This sets the distance from the right edge */
-  margin-top: 110px;
+  margin-top: 73px;
   position: fixed;
   overflow-y: auto;
   /* Make the container vertically scrollable if content exceeds its height */

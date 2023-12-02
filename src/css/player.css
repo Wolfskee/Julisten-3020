@@ -7,8 +7,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   display: none;
-  position: fixed;
-  top: 565px;
+  position: absolute;
+  top: 498px;
+  left: 10px;
   z-index: 2;
 }
 
