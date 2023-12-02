@@ -1,42 +1,15 @@
 #socials-pic {
-
-/*   background: transparent; */
+  background: transparent;
   /* Ensure no background is set */
-/*   border: none; */
+  border: none;
   /* Ensure no border is set */
-/*   box-shadow: none; */
+  box-shadow: none;
   /* Remove any box shadow */
-/*   width: 50px; */
-/*   margin-left: 10px; */
-/*   padding-left: 5px; */
-/* } */
-    background: transparent;
-    /* Ensure no background is set */
-    border: none;
-    /* Ensure no border is set */
-    box-shadow: none;
-    /* Remove any box shadow */
-    margin-right: 20px;
-    width: 50px;
-    border-radius: 35%;
-    margin-left: 10px;
-    padding-left: 5px;
-  }
-
-  .social-page{
-    position: relative;
-    display: inline-block;
-  }
-
-  #socials-pic:hover {
-    transform: scale(1.1);
-  }
-  .social-page:hover .description-socials{
-    visibility: visible;
-    opacity: 10;
-    text-shadow: none;
-    box-shadow: none;
-  }
+  margin-right: 20px;
+  width: 48px;
+  margin-left: 10px;
+  padding-left: 5px;
+}
 
 .social-page {
   position: relative;
@@ -58,9 +31,7 @@
   position: absolute;
   z-index: 999;
   bottom: -25px;
-  left: auto;
-  margin-left: -65px;
-  /* Use half of the width value to align the tooltip */
+  left: 18%;
   opacity: 0;
   transition: opacity 0.3s;
   font-size: 14px;
@@ -73,6 +44,15 @@
   opacity: 10;
   text-shadow: none;
   box-shadow: none;
+}
+
+.social-page {
+  position: relative;
+  display: inline-block;
+}
+
+#socials-pic:hover {
+  transform: scale(1.1);
 }
 
 .socials-inner h2 {

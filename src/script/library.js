@@ -5,7 +5,7 @@ const radioLink = document.querySelector('#radio-link');
 
 [songsLink, podcastsLink, radioLink].forEach((link, i) => link.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent the default behavior of the link
-    displayMediaItem([songsDB, podcastsDB, radioDB][i]); // Call the function to display songs
+    displayMediaItem("main-container", [songsDB, podcastsDB, radioDB][i], true); // Call the function to display songs
 }));
 
 const songName = ["Moonlight", "Echoes", "Serenade", "Whisper", "Enchantment", "Velvet", "Surrender", "Stardust", "Crystal", "Echo", "Cascade", "Horizon", "Reflection", "Solitude", "Eternity", "Oasis", "Aurora", "Reverie", "Lullaby", "Sanctuary", "Mirage", "Harmony", "Radiance", "Misty", "Ember", "Enigma", "Dusk", "Ethereal"];
@@ -18,19 +18,21 @@ const songsDB = generateRandomItemsDatabase(musicGenres, songName, 1, 3);
 const podcastsDB = generateRandomItemsDatabase(podcastTopics, radioName, 1, 1);
 const radioDB = generateRandomItemsDatabase(radioGenres, radioName, 1, 1);
 
-function displayMediaItem(db) {
-    const mainContainer = document.getElementById("main-container");
+function displayMediaItem(containerId, db, cropped) {
+    const mainContainer = document.getElementById(containerId);
     mainContainer.innerHTML = '';
 
     const itemTemplate = document.getElementById('media-item');
     const genreTemplate = document.getElementById('genre');
 
-    for (const [genre, songs] of Object.entries(db)) {
+    for (const [genre, origin_songs] of Object.entries(db)) {
         const genreClone = document.importNode(genreTemplate.content, true);
         genreClone.querySelector('#genre-name').innerText = genre;
 
         const songList = document.createElement('div');
         songList.classList.add('media-grid');
+
+        const songs = cropped ? origin_songs.slice(0, 8) : origin_songs;
 
         songs.forEach(song => {
             const clone = document.importNode(itemTemplate.content, true);
@@ -86,4 +88,27 @@ function randomName(words, minLength, maxLength) {
     }
 
     return titleWords.join(' ');
+}
+
+function showGenre(element) {
+    const genreName = element.parentElement.querySelectorAll("#genre-name")[0].innerText;
+    $(".genre-outer").fadeIn(300); // Fade in the overlay
+    $(".genre-inner").css("transform", "translate(-75%, -70%) scale(1)").fadeIn(300);
+
+    const mediaType = $(".nav-link.enlarged")[0].innerText.toLowerCase();
+    const db = eval(mediaType + "DB");
+    displayMediaItem("genre-inner", Object.fromEntries(
+        [Object.entries(db).find(([key, _]) => key === genreName)]), false);
+
+    $("#genre-inner > .type-head > .line").hide();
+    $("#genre-inner > .type-head > .more-btn").hide();
+    $("body").css("overflow-y", "hidden");
+}
+
+function hideGenre() {
+    $('.genre-outer').fadeOut(300);
+    $('.genre-inner').fadeOut(300, function () {
+        $(this).css('transform', 'translate(-75%, -70%) scale(0.9)');
+    });
+    $("body").css("overflow-y", "auto");
 }
