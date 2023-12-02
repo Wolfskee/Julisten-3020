@@ -61,8 +61,8 @@ function onSearch() {
 function display(searchResults) {
     insideMain.innerHTML = `
         <button class="btn btn-secondary search-button backbutton" onclick="returnHome()"><h2>&larr;</h2></button>
-        <h3 class="search-header"> ${searchResults} search results:</h3>
-        <div class="media-grid-item" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
+        <h3> ${searchResults} search results:</h3>
+        <div class="media-grid-item search-header" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
             <img src=${img1} class="mr-3 item-pic" draggable="false" alt="Lullaby">
             <div class="media-body">
                 <div class="media-info">
@@ -100,8 +100,6 @@ function display(searchResults) {
                 </icon>
                 <span class="tooltip-text">Add song to Queue</span>
             </button>
-            <!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
-                <u>More Info</u></a> -->
             <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
                 <icon>
                     <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
