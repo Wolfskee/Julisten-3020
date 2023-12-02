@@ -98,7 +98,7 @@ function display(searchResults) {
                     <icon>
                         <img src="src/img/plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
                     </icon>
-                    <span class="tooltip-text">Add song to Queue</span>
+                    <span class="tooltip-text" style="right: 60px;">Add song to Queue</span>
                 </button>
                 <!-- <a href=" javascript:void(0);" onclick="moreInfo(this)" style="color: white" draggable=false>
                     <u>More Info</u></a> -->
@@ -106,7 +106,7 @@ function display(searchResults) {
                     <icon>
                         <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
                     </icon>
-                    <span class="tooltip-text"><span>More info</span></span>
+                    <span class="tooltip-text" style="right: 35px;"><span>More info</span></span>
                 </button>
             </div>
         </div>
@@ -123,13 +123,13 @@ function display(searchResults) {
                 <icon>
                     <img src="src/img/plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
                 </icon>
-                <span class="tooltip-text">Add song to Queue</span>
+                <span class="tooltip-text" style="right: 60px;">Add song to Queue</span>
             </button>
             <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
                 <icon>
                     <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
                 </icon>
-                <span class="tooltip-text"><span>More info</span></span>
+                <span class="tooltip-text" style="right: 35px;"><span>More info</span></span>
             </button>
         </div>
     </div>
@@ -145,13 +145,13 @@ function display(searchResults) {
             <icon>
                 <img src="src/img/plus-icon.svg" alt="Add song to Queue" style="width: 25px; height: 25px; transform: translate(-6.1px, -3px);">
             </icon>
-            <span class="tooltip-text">Add song to Queue</span>
+            <span class="tooltip-text" style="right: 60px;">Add song to Queue</span>
         </button>
         <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
             <icon>
                 <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
             </icon>
-            <span class="tooltip-text"><span>More info</span></span>
+            <span class="tooltip-text" style="right: 35px;"><span>More info</span></span>
         </button>
     </div>
 </div>
