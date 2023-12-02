@@ -5,22 +5,22 @@
   /* Ensure no border is set */
   box-shadow: none;
   /* Remove any box shadow */
-/*   width: 50px; */
-/*   margin-left: 10px; */
-/*   padding-left: 5px; */
-/* } */
-    background: transparent;
-    /* Ensure no background is set */
-    border: none;
-    /* Ensure no border is set */
-    box-shadow: none;
-    /* Remove any box shadow */
-    margin-right: 20px;
-    width: 50px;
-    border-radius: 35%;
-    margin-left: 10px;
-    padding-left: 5px;
-  }
+  /*   width: 50px; */
+  /*   margin-left: 10px; */
+  /*   padding-left: 5px; */
+  /* } */
+  background: transparent;
+  /* Ensure no background is set */
+  border: none;
+  /* Ensure no border is set */
+  box-shadow: none;
+  /* Remove any box shadow */
+  margin-right: 20px;
+  width: 50px;
+  border-radius: 35%;
+  margin-left: 10px;
+  padding-left: 5px;
+}
 
 .social-page {
   position: relative;
@@ -194,7 +194,7 @@
 .socials-side {
   height: 60%;
   width: 250px;
-  position: absolute;
+  position: fixed;
   background: rgba(22, 22, 22, 0.8);
   z-index: 1;
   transition: 0.5s ease;
@@ -263,11 +263,10 @@ ul li:hover button {
 .socials-side>label>span {
   position: absolute;
   /* Position span absolutely within label */
-  right: -15px;
+  right: -25px;
   /* Move span to the right inside the label */
   top: 10px;
-  /* Adjust this value to vertically center it, if needed */
-  font: size 25px;
+  font-size: 25px;
   border-radius: 3px;
   color: #fff;
   padding: 1px;
