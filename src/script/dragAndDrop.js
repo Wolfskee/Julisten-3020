@@ -25,16 +25,16 @@ var t2 = gsap.timeline({ repeat: -1, yoyo: true });
 var t3 = gsap.timeline({ repeat: -1, yoyo: true });
 
 tl.to("#droppable", {
-    duration: 4,
+    duration: 3,
     y: "-20px",
-    scale: 0.9,
+    scale: 0.96,
     rotationX: 10,
     rotationY: 5,
     ease: "power1.inOut"
 });
 
 tl.to("#droppable", {
-    duration: 4,
+    duration: 3,
     y: "0px",
     scale: 1,
     rotationX: 0,
@@ -43,16 +43,16 @@ tl.to("#droppable", {
 });
 
 t2.to(".droppableBorder", {
-    duration: 4,
+    duration: 3,
     y: "-20px",
-    scale: 0.9,
+    scale: 0.96,
     rotationX: 10,
     rotationY: 5,
     ease: "power1.inOut"
 });
 
 t2.to(".droppableBorder", {
-    duration: 4,
+    duration: 3,
     y: "0px",
     scale: 1,
     rotationX: 0,
