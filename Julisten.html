@@ -72,10 +72,9 @@
 						<div class="carousel-item active">
 							<div class="row">
 								<div class="col">
-									<div class="media" draggable="true" ondragstart="mediaItemDragStart(event)"
-										ondragend="handleDragEnd(event)">
+									<div class="media" draggable="false">
 										<img src="src\img\UsandThem.jpg" alt="Us and Them Album Cover"
-											class="mr-3 album-art">
+											class="mr-3 album-art" draggable="true" ondragend="dropHandler_sod(this)">
 										<div class="media-info">
 											<h5 class="mt-0">Us and Them</h5>
 											<div>by Pink Floyd</div>
@@ -105,9 +104,9 @@
 						<div class="carousel-item">
 							<div class="row">
 								<div class="col">
-									<div class="media" draggable="true"
-										ondragend="drop(null, GEM, '11','src/img/11.jpg')">
-										<img src="src\img\11.jpg" alt="11 Cover" class="mr-3 album-art">
+									<div class="media" draggable="false">
+										<img src="src\img\11.jpg" alt="11 Cover"
+											class="mr-3 album-art" draggable="true" ondragend="dropHandler_sod(this)">
 										<div class="media-info">
 											<h5 class="mt-0">11</h5>
 											<div>by GEM</div>
