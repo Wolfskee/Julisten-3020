@@ -8,7 +8,7 @@
   border-radius: 10px;
   display: none;
   position: fixed;
-  top: 852px;
+  top: 565px;
   z-index: 2;
 }
 
@@ -38,13 +38,29 @@
 }
 
 .blenderBtn{
-  margin-left: 94px;
+  margin-left: 200px;
+  margin-bottom: 10px;
   position: relative;
 }
 .blender{
   background: transparent;
   width: 30px;
   height: auto;
+  cursor: pointer;
+}
+
+.blenderBtn:hover::before {
+  content: "Mix Tracks";
+  background: #151515;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  transform: translateY(-100%);
+  white-space: nowrap;
+  z-index: 1;
 }
 
 .player-controls {
