@@ -85,7 +85,7 @@ function onSearch() {
 
 function display(searchResults) {
     insideMain.innerHTML = `
-        <a class="btn btn-secondary search-button backbutton" href="Julisten.html"><h2>&larr;</h2></a>
+        <button class="btn btn-secondary search-button backbutton" onclick="returnHome()"><h2>&larr;</h2></button>
         <h3> ${searchResults} search results:</h3>
         <div class="media-grid-item search-header" draggable="true" ondragstart="mediaItemDragStart(event)" ondragend="handleDragEnd(event)">
             <img src=${img1} class="mr-3 item-pic" draggable="false" alt="Lullaby">
