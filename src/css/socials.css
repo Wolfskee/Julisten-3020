@@ -23,42 +23,6 @@
     padding-left: 5px;
   }
 
-  .social-page{
-    position: relative;
-    display: inline-block;
-  }
-
-  #socials-pic:hover {
-    transform: scale(1.1);
-  }
-
-  .description-socials{
-    visibility: hidden;
-    width: 120px;
-    background-color: transparent;
-    color: #fff;
-    text-align: left;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 999;
-    bottom: -23px;
-    left: auto;
-    margin-left: -65px;
-    /* Use half of the width value to align the tooltip */
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 14px;
-    text-shadow: none;
-    box-shadow: none;
-  }
-
-  .social-page:hover .description-socials{
-    visibility: visible;
-    opacity: 10;
-    text-shadow: none;
-    box-shadow: none;
-  }
 
 .social-page {
   position: relative;
@@ -81,7 +45,7 @@
   z-index: 999;
   bottom: -23px;
   left: auto;
-  margin-left: -45px;
+  margin-left: -65px;
   /* Use half of the width value to align the tooltip */
   opacity: 0;
   transition: opacity 0.3s;
