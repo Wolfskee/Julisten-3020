@@ -177,9 +177,8 @@ main.content {
   position: absolute;
   z-index: 999;
   bottom: -23px;
-  left: 50%;
-  margin-left: -60px;
-  /* Use half of the width value to align the tooltip */
+  left: -70%;
+  /* Align the tooltip */
   opacity: 0;
   transition: opacity 0.3s;
   font-size: 14px;

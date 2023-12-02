@@ -79,7 +79,7 @@ function display(searchResults) {
                     <u>More Info</u></a> -->
                 <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
                     <icon>
-                        <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+                        <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
                     </icon>
                     <span class="tooltip-text"><span>More info</span></span>
                 </button>
@@ -102,7 +102,7 @@ function display(searchResults) {
             </button>
             <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
                 <icon>
-                    <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+                    <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
                 </icon>
                 <span class="tooltip-text"><span>More info</span></span>
             </button>
@@ -124,7 +124,7 @@ function display(searchResults) {
         </button>
         <button class="add-to-queue-btn" onclick="moreInfo(this)" draggable="false">
             <icon>
-                <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-6.7px, -3px);">
+                <img src="src/img/info-icon.svg" alt="More info" style="width: 26px; height: 26px; transform: translate(-26%, -12%);">
             </icon>
             <span class="tooltip-text"><span>More info</span></span>
         </button>
